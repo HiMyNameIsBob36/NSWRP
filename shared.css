@@ -37,6 +37,11 @@ header a {
   margin-left: 15px;
 }
 
+.icon {
+  width: 40px;
+  height: 100%;
+}
+
 .logo {
   width: 50px;
   height: 100%;
