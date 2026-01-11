@@ -23,6 +23,14 @@ header {
   align-items: center;
 }
 
+.left {
+ justify-content: flex-end;
+}
+
+.right {
+ justify-content: flex-start;
+}
+
 header a {
   color: white;
   text-decoration: none;
