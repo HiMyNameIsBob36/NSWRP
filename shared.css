@@ -19,13 +19,8 @@ header {
 
 .navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-}
-
-.header {
- display: flex;
-  gap: 20px;
 }
 
 header a {
