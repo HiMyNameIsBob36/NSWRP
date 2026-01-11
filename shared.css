@@ -18,9 +18,8 @@ header {
 
 .navigation {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 10px;
 }
 
 header a {
@@ -28,27 +27,6 @@ header a {
   text-decoration: none;
   margin-left: 15px;
 }
-
-.left,
-.right,
-.center {
-  flex: 0 1 49%;
-  display: flex;
-  align-items: center;
-}
-
-.left {
-  justify-content: flex-start;
-}
-
-.right {
-  justify-content: flex-end;
-}
-
-.center {
-  justify-content: center;
-}
-
 
 .logo {
   width: 50px;
