@@ -13,6 +13,7 @@ header {
   position: sticky;
   top: 0;
   width: 100wv;
+  height: 50px;
   font-family: "Roboto Mono", monospace;
 }
 
