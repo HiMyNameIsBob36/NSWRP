@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NSW Roleplay</title>
+
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px 60px;
+      z-index: 10;
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .social-icons img {
+      height: 20px;
+      cursor: pointer;
+    }
+
+    .nav-right {
+      display: none;
+    }
+
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-size: 18px;
+    }
+
+    .nav-center a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.2s ease;
+    }
+
+    .nav-center a.active {
+      color: #e67e22;
+    }
+
+    .nav-center a:hover {
+      color: #e67e22;
+    }
+
+    /* Placeholder for icons / logo */
+    .logo img,
+    .icon img {
+      height: 32px;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      height: 65vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero img.background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.55);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-content img.logo {
+      height: 90px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content h1 {
+      font-size: 42px;
+      font-weight: bold;
+    }
+
+    .hero-content p {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-top: 5px;
+    }
+
+    /* ===== RESOURCES SECTION ===== */
+    .resources {
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .resources h2 {
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <nav class="nav">
+
+      <!-- Left icons / logo -->
+      <div class="nav-left">
+        <div class="logo">
+          <!-- Logo image -->
+          <img src="" alt="NSW Roleplay Logo" />
+        </div>
+
+        <!-- Social icons next to logo -->
+        <div class="social-icons">
+          <img src="" alt="YouTube" />
+          <img src="" alt="Discord" />
+        </div>
+      </div>
+
+      <!-- Center navigation -->
+      <div class="nav-center">
+        <a href="#">Departments</a>
+        <a href="#" class="active">Home</a>
+        <a href="#">Guidelines</a>
+      </div>
+
+      <!-- Right icons -->
+      <div class="nav-right">
+        <div class="icon"><img src="" alt="Discord" /></div>
+        <div class="icon"><img src="" alt="YouTube" /></div>
+      </div>
+
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+
+    <!-- Background image -->
+    <img src="" alt="Background" class="background" />
+
+    <div class="hero-content">
+      <!-- Center logo -->
+      <img src="" alt="NSW Roleplay Emblem" class="logo" />
+      <h1>NSW Roleplay</h1>
+      <p>Top tier roleplays from all over the state.</p>
+    </div>
+
+  </section>
+
+  <!-- ===== RESOURCES ===== -->
+  <section class="resources">
+    <h2>Resources</h2>
+  </section>
+
+</body>
+</html>
