@@ -8,58 +8,68 @@ body {
 
 /* Header styling */
 header {
-  background: #242527;
-  color: #ffffff;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  font-family: "Roboto Mono", monospace;
-}
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px 60px;
+      z-index: 10;
+    }
 
-.navigation {
-  display: flex;
-  /*justify-content: center;*/
-  align-items: center;
-  width: 100%;
-}
+    .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
 
-.icons-left {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  padding-left: 10px;
-}
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
 
-.text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 74%;
-}
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
 
+    .social-icons img {
+      height: 20px;
+      cursor: pointer;
+    }
 
-.hook {
-  color: white;
-  text-decoration: none;
-  margin-left: 15px;
-}
+    .nav-right {
+      display: none;
+    }
 
-.active {
- color: #e67e22;
- text-decoration: underline;
- margin-left: 15px;
-}
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 30px;
+      font-size: 18px;
+    }
 
-.icons {
-  width: 40px;
-  height: 100%;
-  justify-content: flex-start;
-}
+    .nav-center a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.2s ease;
+    }
 
-/* BREAK */
+    .nav-center a.active {
+      color: #e67e22;
+    }
 
+    .nav-center a:hover {
+      color: #e67e22;
+    }
+
+    /* Placeholder for icons / logo */
+    .logo img,
+    .icon img {
+      height: 32px;
+    }
 
 .alert {
   padding: 20px;
