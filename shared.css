@@ -24,13 +24,13 @@ header {
   width: 100%;
 }
 
-.icons-left {
+/*.icons-left {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
   padding-left: 10px;
-}
+}*/
 
 .text {
   position: absolute;
@@ -59,10 +59,14 @@ header {
   justify-content: flex-start;
 }
 
-.icons {
-  width: 30px;
-  height: 100%;
+.icon-size {
+  width: 25px;
+  height: 50%;
   justify-content: flex-start;
+}
+
+.icons {
+
 }
 
 /* BREAK */
