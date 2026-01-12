@@ -23,21 +23,30 @@ header {
   align-items: center;
 }
 
-.active {
- color: #e67e22;
- text-decoration: underline;
- margin-left: 15px;
+.icons-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
 }
 
-.text {
+.right {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .hook {
   color: white;
   text-decoration: none;
   margin-left: 15px;
+}
+
+.active {
+ color: #e67e22;
+ text-decoration: underline;
+ margin-left: 15px;
 }
 
 .icons {
