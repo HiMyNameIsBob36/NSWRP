@@ -19,7 +19,7 @@ header {
 
 .navigation {
   display: flex;
-  justify-content: center;
+  /*justify-content: center;*/
   align-items: center;
 }
 
@@ -39,15 +39,10 @@ header {
   margin-left: 15px;
 }
 
-.icon {
+.icons {
   width: 40px;
   height: 100%;
-}
-
-.logo {
-  width: 50px;
-  height: 100%;
-  vertical-align: middle;
+  justify-content: flex-start;
 }
 
 /* BREAK */
