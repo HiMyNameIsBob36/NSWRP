@@ -32,21 +32,14 @@ header {
   padding-left: 10px;
 }
 
-/*.text {
+.text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 74%;
-}*/
-
-    .text {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 30px;
-      font-size: 18px;
-    }
+  gap: 10px;
+  font-size: 18px;
+}
 
 
 .hook {
