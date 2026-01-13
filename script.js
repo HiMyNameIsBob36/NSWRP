@@ -1,9 +1,9 @@
  const images = [
-    "asseta/bg/01.png",
-    "images/bg/02.png",
-    "images/bg/03.png"
-    "images/bg/04.png"
-    "images/bg/05.png"
+    "assets/bg/01.png",
+    "assets/bg/02.png",
+    "assets/bg/03.png"
+    "assets/bg/04.png"
+    "assets/bg/05.png"
   ];
 
   const hero = document.getElementById("hero");
