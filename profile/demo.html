@@ -14,12 +14,10 @@
 
 <div class="container">
 
-  <!-- LEFT CARD -->
   <div class="card profile">
 
     <div class="avatar">
-      <!-- Replace with your image -->
-      <img src="https://i.imgur.com/0y0y0y0.png" alt="Avatar">
+      <img src="https://nsw-rp.netlify.app/profile/demo.png" alt="Avatar">
     </div>
 
     <div class="name">Bob</div>
@@ -32,40 +30,19 @@
     <div class="pill" id="time">
       ⏰ --:--
     </div>
-
-    <div class="position">
-      <h3>Position</h3>
-      <strong>Developer</strong>
-      <p>
-        I manage all the custom bots you see,
-        and the website you're using now.
-      </p>
-    </div>
-
   </div>
 
-  <!-- RIGHT CARD -->
   <div class="card about">
-    <h1>About me</h1>
-    <p>blah blah blah</p>
+    <h1>About Me</h1>
+    <p>yep</p>
+
+       <h1>My Position</h1>
+    <p>owner :D</p>
+
+       <h1>Responsibilities</h1>
+    <p>Website<br>Discord Bot</p>
   </div>
 
 </div>
-
-<script>
-  function updateTime() {
-    const timeEl = document.getElementById("time");
-    const now = new Date();
-    const time = now.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-    timeEl.innerHTML = "⏰ " + time;
-  }
-
-  updateTime();
-  setInterval(updateTime, 60000);
-</script>
-
 </body>
 </html>
