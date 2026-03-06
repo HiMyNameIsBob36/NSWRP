@@ -1,0 +1,180 @@
+body{
+margin:0;
+font-family:Arial;
+background:#0e0f14;
+}
+
+/* OPEN BUTTON */
+.openBtn{
+position:fixed;
+top:15px;
+left:15px;
+background:#1a1b22;
+border:none;
+color:white;
+font-size:22px;
+padding:8px 12px;
+border-radius:8px;
+cursor:pointer;
+transition:.3s;
+}
+
+.openBtn:hover{
+background:#2a2b33;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+position:fixed;
+left:-270px;
+top:0;
+width:260px;
+height:100%;
+background:linear-gradient(180deg,#11131a,#0d0f15);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+transition:left .35s cubic-bezier(.25,.8,.25,1);
+box-shadow:5px 0 25px rgba(0,0,0,.4);
+}
+
+.sidebar.open{
+left:0;
+}
+
+/* TOP */
+
+.sidebarTop{
+padding:18px;
+}
+
+.closeBtn{
+background:#1d1f27;
+border:none;
+color:white;
+font-size:18px;
+width:36px;
+height:36px;
+border-radius:10px;
+cursor:pointer;
+transition:.3s;
+}
+
+.closeBtn:hover{
+background:#2a2d38;
+transform:rotate(90deg);
+}
+
+.serverName{
+margin-top:12px;
+font-size:14px;
+opacity:.9;
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.serverName img{
+width:16px;
+opacity:.8;
+}
+
+/* NAV */
+
+.navList{
+display:flex;
+flex-direction:column;
+gap:12px;
+margin-top:10px;
+}
+
+.navItem{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+color:white;
+padding:10px 20px;
+font-size:18px;
+position:relative;
+}
+
+/* LEFT ACTIVE BAR */
+
+.navItem::before{
+content:"";
+position:absolute;
+left:0;
+top:0;
+height:100%;
+width:4px;
+background:white;
+transform:scaleY(0);
+transition:transform .25s;
+}
+
+.navItem.active::before{
+transform:scaleY(1);
+}
+
+/* ICON */
+
+.icon{
+width:26px;
+}
+
+/* HOVER UNDERLINE */
+
+.navItem span{
+position:relative;
+}
+
+.navItem span::after{
+content:"";
+position:absolute;
+bottom:-4px;
+left:0;
+height:2px;
+width:100%;
+background:white;
+transform:scaleX(0);
+transform-origin:left;
+transition:transform .35s ease;
+}
+
+.navItem:hover span::after{
+transform:scaleX(1);
+}
+
+/* BOTTOM */
+
+.sidebarBottom{
+padding:18px;
+}
+
+.socials{
+display:flex;
+gap:12px;
+margin-bottom:10px;
+}
+
+.socials img{
+width:34px;
+padding:6px;
+background:#1a1c24;
+border-radius:10px;
+transition:.3s;
+cursor:pointer;
+}
+
+.socials img:hover{
+background:#2a2d38;
+transform:translateY(-3px);
+}
+
+.copyright{
+font-size:11px;
+opacity:.7;
+}
