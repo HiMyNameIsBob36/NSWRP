@@ -5,16 +5,15 @@ class MyHeader extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
 <div class="navbar">
-<img class="logo">New South Wales Roleplay>
+<div id="menu"><img class="icon"></div>
 
-<form method="get">
-<div class="search"><input placeholder="Search creations, users, groups..."></div>
-</form>
+<img class="icon"><span>New South Wales Roleplay</span>
+
+
 
 <div class="nav-right">
-<button class="create-btn">+ Create New</button>
-<div class="profile">HeyItBob36</div>
-</div>
+   <a><div id="search"><img class="icon"></div></a>
+ </div>
 </div>`
   }
 }
