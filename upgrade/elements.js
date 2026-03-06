@@ -5,7 +5,7 @@ class MyHeader extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
 <div class="navbar">
-<div class="logo">ERLC<span>X</span></div>
+<img class="logo">New South Wales Roleplay>
 
 <form method="get">
 <div class="search"><input placeholder="Search creations, users, groups..."></div>
