@@ -5,14 +5,14 @@ class MyHeader extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
 <div class="navbar">
-<div id="menu"><img class="icon"></div>
+ <a href="https://aunsw.netlify.app/menu"><div class="icon"><img class="image" src="../media/menu.png"></div></a>
 
-<img class="icon"><span>New South Wales Roleplay</span>
+<a href="https://aunsw.netlify.app/"><img class="icon"><span>New South Wales Roleplay</span></a>
 
 
 
 <div class="nav-right">
-   <a><div id="search"><img class="icon"></div></a>
+   <a href="https://aunsw.netlify.app/search"><div class="icon"><img class="image" src="../media/search.png"></div></a>
  </div>
 </div>`
   }
