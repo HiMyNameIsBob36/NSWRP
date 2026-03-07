@@ -46,41 +46,6 @@ letter-spacing: 1px;
 color: #3aa3ff;
 }
 
-.search{
-flex: 1;
-margin: 0 40px;
-}
-
-.search input{
-width: 100%;
-padding: 10px 16px;
-border-radius: 20px;
-border: none;
-background: #141c2a;
-color: white;
-}
-
-.nav-right{
-display:flex;
-align-items:center;
-gap:15px;
-}
-
-.create-btn{
-background:#3aa3ff;
-border:none;
-padding:10px 16px;
-border-radius:20px;
-color:white;
-cursor:pointer;
-}
-
-.profile{
-background:#141c2a;
-padding:8px 14px;
-border-radius:20px;
-}
-
 /* HERO */
 
 .hero{
