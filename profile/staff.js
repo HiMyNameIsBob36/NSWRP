@@ -1,69 +1,82 @@
-// 1. Define your color palette here
 const THEMES = {
-    "Management Team": { color: "#ff4d4d", border: "#ff1a1a" },
-    "Supervisor":      { color: "#990000", border: "#660000" },
-    "Development":     { color: "#4d94ff", border: "#1a75ff" },
-    "Lead Developer":  { color: "#2d5a9e", border: "#1c3d6e" },
-    "Default":         { color: "#eeeeee", border: "#cccccc" } // Fallback
+    "Police": { color: "rgba(0, 81, 255, 0.3)", border: "#0051ff" },
+    "Management": { color: "rgba(255, 77, 77, 0.3)", border: "#ff4d4d" },
+    "Default": { color: "rgba(255, 255, 255, 0.1)", border: "#46494A" }
 };
 
-// 2. Helper to grab theme colors based on name
 function getTheme(name) {
     return THEMES[name] || THEMES["Default"];
 }
 
-function getLocalTime(timezone) {
-    try {
-        return new Intl.DateTimeFormat('en-US', {
+// LIVE TIME FUNCTION
+function updateAllTimes() {
+    const timeElements = document.querySelectorAll('.live-time');
+    timeElements.forEach(el => {
+        const tz = el.getAttribute('data-timezone');
+        el.innerText = new Intl.DateTimeFormat('en-AU', {
             timeStyle: 'short',
-            timeZone: timezone
+            timeZone: tz
         }).format(new Date());
-    } catch (e) {
-        return "Failed fetching time.";
-    }
+    });
 }
+
+// Update times every 30 seconds
+setInterval(updateAllTimes, 30000);
 
 async function loadStaff() {
     const container = document.getElementById("staff-container");
-    try {
-        const response = await fetch("staff.json");
-        const data = await response.json();
+    const response = await fetch("staff.json");
+    const data = await response.json();
 
-        container.innerHTML = "";
+    // 1. Group staff by department
+    const groups = data.staff.reduce((acc, member) => {
+        const dept = member.sector; // Using 'sector' as the Department name
+        if (!acc[dept]) acc[dept] = [];
+        acc[dept].push(member);
+        return acc;
+    }, {});
 
-        data.staff.forEach(member => {
-            // Get themes automatically based on the name string in JSON
-            const sectorTheme = getTheme(member.sector);
+    container.innerHTML = "";
+
+    // 2. Loop through each department group
+    for (const [deptName, members] of Object.entries(groups)) {
+        const section = document.createElement("div");
+        section.className = "dept-section";
+        
+        section.innerHTML = `<h2 class="dept-title">${deptName}</h2>`;
+        
+        const wrapper = document.createElement("div");
+        wrapper.className = "card-wrapper";
+
+        members.forEach(member => {
             const roleTheme = getTheme(member.role);
-            const currentTime = getLocalTime(member.timezone);
-
             const card = document.createElement("div");
             card.className = "staff-card";
-
+            
             card.innerHTML = `
                 <div class="staff-header">
-                    <img src="${member.avatar}" class="avatar" alt="${member.name}">
+                    <img src="${member.avatar}" class="avatar">
                     <div>
                         <h2>${member.name}</h2>
-                        <p>${member.handle} • ${member.pronouns}</p>
-                        <p><img src="../media/clock.png" class="timer"> ${currentTime}</p>
+                        <p>${member.handle}</p>
+                        <p>🕒 <span class="live-time time-update" data-timezone="${member.timezone}">...</span></p>
                     </div>
                 </div>
                 <div class="staff-tags">
-                    <span class="tag" style="background:${sectorTheme.color}; border:2px solid ${sectorTheme.border}">
-                        ${member.sector}
-                    </span>
-                    <span class="tag" style="background:${roleTheme.color}; border:2px solid ${roleTheme.border}">
+                    <span class="tag" style="background:${roleTheme.color}; border:1px solid ${roleTheme.border}">
                         ${member.role}
                     </span>
                 </div>
                 <p class="description">${member.description}</p>
             `;
-            container.appendChild(card);
+            wrapper.appendChild(card);
         });
-    } catch (error) {
-        console.error("Error:", error);
+
+        section.appendChild(wrapper);
+        container.appendChild(section);
     }
+    
+    updateAllTimes(); // Initial time load
 }
 
 document.addEventListener("DOMContentLoaded", loadStaff);
