@@ -7,8 +7,8 @@
       "timezone": "Australia/Sydney",
       "description": "👋 Hey! I'm Bob. I supervise all staff in game and make sure they're up to our standards!",
       "avatar": "media/profiles/bob.png",
-      "sector": "Management Team",
-      "role": "Supervisor"
+      "sector": "Directive Board",
+      "role": "Founder"
     },
     {
       "name": "Ben",
@@ -16,9 +16,19 @@
       "pronouns": "he/him",
       "timezone": "Australia/Sydney",
       "description": "N/A",
-      "avatar": "media/profiles/sarah.png",
-      "sector": "Development",
-      "role": "Lead Developer"
+      "avatar": "media/profiles/ben.png",
+      "sector": "Directive Board",
+      "role": "Director"
+    },
+    {
+      "name": "Magic",
+      "handle": "@Magicknight200",
+      "pronouns": "he/him",
+      "timezone": "Australia/Queensland",
+      "description": "N/A",
+      "avatar": "media/profiles/magic.png",
+      "sector": "Directive Board",
+      "role": "Director"
     }
   ]
 }
