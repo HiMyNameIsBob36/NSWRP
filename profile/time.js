@@ -1,35 +1,48 @@
-const staffTimezone = "Australia/Sydney";
-const timezoneLabel = "AEST";
+async function loadStaff() {
 
-function updateTime() {
-  const timeEl = document.getElementById("time");
-  if (!timeEl) return;
+    const response = await fetch("staff.json");
+    const data = await response.json();
 
-  const now = new Date();
+    const container = document.getElementById("staff-container");
 
-  const time = now.toLocaleTimeString("en-AU", {
-    timeZone: staffTimezone,
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true
-  });
+    data.staff.forEach(member => {
 
-  // Get hour safely (0–23) in staff timezone
-  const hour = parseInt(
-    now.toLocaleString("en-AU", {
-      timeZone: staffTimezone,
-      hour: "numeric",
-      hour12: false
-    }),
-    10
-  );
+        const card = document.createElement("div");
+        card.className = "staff-card";
 
-  const isLate = hour >= 22 || hour < 6;
-  const icon = isLate ? "🌙" : "⏰";
+        const currentTime = getLocalTime(member.timezone);
 
-  timeEl.textContent = `${icon} ${time} (${timezoneLabel})`;
+        card.innerHTML = `
+            <div class="staff-header">
+                <img src="${member.avatar}" class="avatar">
+
+                <div>
+                    <h2>${member.name}</h2>
+                    <p>${member.handle} • ${member.pronouns}</p>
+                    <p>🕒 ${currentTime}</p>
+                </div>
+            </div>
+
+            <div class="staff-tags">
+
+                <span class="tag"
+                style="background:${member.sector.color}; border:2px solid ${member.sector.border}">
+                    ${member.sector.name}
+                </span>
+
+                <span class="tag"
+                style="background:${member.role.color}; border:2px solid ${member.role.border}">
+                    ${member.role.name}
+                </span>
+
+            </div>
+
+            <p class="description">${member.description}</p>
+        `;
+
+        container.appendChild(card);
+
+    });
 }
 
-// Run AFTER page loads
-updateTime();
-setInterval(updateTime, 60000);
+loadStaff();
