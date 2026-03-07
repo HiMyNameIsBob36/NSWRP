@@ -1,4 +1,17 @@
-// Helper to format timezone strings into readable time
+// 1. Define your color palette here
+const THEMES = {
+    "Management Team": { color: "#ff4d4d", border: "#ff1a1a" },
+    "Supervisor":      { color: "#990000", border: "#660000" },
+    "Development":     { color: "#4d94ff", border: "#1a75ff" },
+    "Lead Developer":  { color: "#2d5a9e", border: "#1c3d6e" },
+    "Default":         { color: "#eeeeee", border: "#cccccc" } // Fallback
+};
+
+// 2. Helper to grab theme colors based on name
+function getTheme(name) {
+    return THEMES[name] || THEMES["Default"];
+}
+
 function getLocalTime(timezone) {
     try {
         return new Intl.DateTimeFormat('en-US', {
@@ -6,31 +19,26 @@ function getLocalTime(timezone) {
             timeZone: timezone
         }).format(new Date());
     } catch (e) {
-        return "Time unavailable"; // Fallback for invalid timezones
+        return "Time unknown";
     }
 }
 
 async function loadStaff() {
     const container = document.getElementById("staff-container");
-    if (!container) return; // Exit if the HTML element isn't found
-
     try {
         const response = await fetch("staff.json");
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
         const data = await response.json();
 
-        // Clear container (useful if you call this function multiple times)
         container.innerHTML = "";
 
         data.staff.forEach(member => {
+            // Get themes automatically based on the name string in JSON
+            const sectorTheme = getTheme(member.sector);
+            const roleTheme = getTheme(member.role);
+            const currentTime = getLocalTime(member.timezone);
+
             const card = document.createElement("div");
             card.className = "staff-card";
-
-            const currentTime = getLocalTime(member.timezone);
 
             card.innerHTML = `
                 <div class="staff-header">
@@ -42,23 +50,20 @@ async function loadStaff() {
                     </div>
                 </div>
                 <div class="staff-tags">
-                    <span class="tag" style="background:${member.sector.color}; border:2px solid ${member.sector.border}">
-                        ${member.sector.name}
+                    <span class="tag" style="background:${sectorTheme.color}; border:2px solid ${sectorTheme.border}">
+                        ${member.sector}
                     </span>
-                    <span class="tag" style="background:${member.role.color}; border:2px solid ${member.role.border}">
-                        ${member.role.name}
+                    <span class="tag" style="background:${roleTheme.color}; border:2px solid ${roleTheme.border}">
+                        ${member.role}
                     </span>
                 </div>
                 <p class="description">${member.description}</p>
             `;
-
             container.appendChild(card);
         });
     } catch (error) {
-        console.error("Failed to load staff data:", error);
-        container.innerHTML = `<p>Error loading staff directory.</p>`;
+        console.error("Error:", error);
     }
 }
 
-// Ensure the DOM is fully loaded before running the script
 document.addEventListener("DOMContentLoaded", loadStaff);
