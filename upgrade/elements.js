@@ -5,7 +5,54 @@ class MyHeader extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
 <div class="navbar">
- <a href="https://aunsw.netlify.app/menu"><div class="icon"><img class="image" src="../media/menu.png"></div></a>
+  <!-- OPEN BUTTON -->
+<button id="openNav" class="openBtn">☰</button>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar">
+
+    <div class="sidebarTop">
+        <button id="closeNav" class="closeBtn">✕</button>
+        <div class="serverName">
+            <img src="gear-small.png">
+            New South Wales Roleplay
+        </div>
+    </div>
+
+    <nav class="navList">
+
+        <a href="#" class="navItem active">
+            <img src="gear.png" class="icon">
+            <span>Departments</span>
+        </a>
+
+        <a href="#" class="navItem">
+            <img src="gear.png" class="icon">
+            <span>Meet the Team</span>
+        </a>
+
+        <a href="#" class="navItem">
+            <img src="gear.png" class="icon">
+            <span>Other Options</span>
+        </a>
+
+        <a href="#" class="navItem">
+            <img src="gear.png" class="icon">
+            <span>Other Options</span>
+        </a>
+
+    </nav>
+
+    <div class="sidebarBottom">
+        <div class="socials">
+            <img src="youtube.png">
+            <img src="discord.png">
+        </div>
+
+        <div class="copyright">© NSWRP | All rights reserved</div>
+    </div>
+
+</div>
 
 <a href="https://aunsw.netlify.app/"><img class="icon"><span>New South Wales Roleplay</span></a>
 
