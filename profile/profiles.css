@@ -96,7 +96,7 @@
 }
 
 .tag {
-    background: rgba(255, 255, 255, 0.08) !important;
+    /* background: rgba(255, 255, 255, 0.08) !important;*/
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.2);
