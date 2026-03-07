@@ -1,9 +1,9 @@
 const THEMES = {
-    "Management Board": { color: "rgba(255, 77, 77, 0.15)", border: "#ff4d4d" },
+    "Manager": { color: "rgba(255, 77, 77, 0.15)", border: "#ff4d4d" },
     "Supervisor":      { color: "rgba(153, 0, 0, 0.15)", border: "#990000" },
     "Founder":     { color: "rgba(77, 148, 255, 0.15)", border: "#4d94ff" },
     "Director":          { color: "rgba(0, 81, 255, 0.15)", border: "#0051ff" },
-    "Manager":         { color: "rgba(255, 255, 255, 0.1)", border: "#46494A" }
+    "Default":         { color: "rgba(255, 255, 255, 0.1)", border: "#46494A" }
 };
 
 function getTheme(name) {
