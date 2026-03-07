@@ -84,6 +84,11 @@
     object-fit: cover;
 }
 
+.time {
+    width: 15px;
+    height: 15px;
+}
+
 .staff-tags {
     margin-top: 15px;
     display: flex;
