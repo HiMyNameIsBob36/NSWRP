@@ -1,10 +1,45 @@
-/* 1. The Grid Container - Place this around your cards */
+/* Container for the whole directory */
 #staff-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 per line */
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
     padding: 20px;
-    justify-items: center;
+    max-width: 1200px; /* Prevents it from getting too wide */
+    margin: 0 auto;    /* Centers the whole container on the page */
+}
+
+/* Department Section Wrapper */
+.dept-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.dept-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #46494A;
+    padding-bottom: 10px;
+}
+
+/* The Card Group - This centers 2 cards! */
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;       /* FIX: Prevents cards going off-screen */
+    justify-content: center; /* FIX: Centers cards if there are only 2 */
+    gap: 25px;
+    width: 100%;
+}
+
+
+.time-update {
+    display: inline-block;
+    font-family: monospace;
+    color: #00ff88; /* A nice "active" green */
+    animation: tick 2s infinite ease-in-out;
 }
 
 /* 2. The Staff Card */
@@ -68,12 +103,13 @@
 }
 
 .tag {
-    display: inline-block;
-    padding: 5px 12px;
+    padding: 6px 12px;
     border-radius: 6px;
     font-size: 13px;
     font-weight: bold;
-    transition: transform 0.2s ease;
+    /* The "See-through" Magic: */
+    backdrop-filter: blur(4px); 
+    background: rgba(255, 255, 255, 0.1); /* Default slight tint */
 }
 
 .tag:hover {
@@ -93,4 +129,10 @@
 }
 @media (max-width: 750px) {
     #staff-container { grid-template-columns: 1fr; }
+}
+
+@keyframes tick {
+    0% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.5; transform: scale(1); }
 }
