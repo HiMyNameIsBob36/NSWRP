@@ -1,7 +1,7 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#0e0f14;
+background:#18171B;
 color:white;
 }
 
@@ -21,6 +21,9 @@ border:none;
 font-size:22px;
 color:white;
 cursor:pointer;
+background: #27262A;
+border: 1px #46494A solid;
+border-radius: 10px;
 }
 
 .logo{
@@ -112,6 +115,9 @@ width:32px;
 height:32px;
 border-radius:8px;
 cursor:pointer;
+background: #27262A;
+border: 1px #46494A solid;
+border-radius: 10px;
 }
 
 /* NAV */
