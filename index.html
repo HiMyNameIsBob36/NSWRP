@@ -1,34 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>NSWRP Official Website.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../shared.css">
-    <link rel="icon" href="../assets/logo.png">
-    <meta property="og:title" content="NSWRP Official Website." />
-    <meta property="og:description" content="Get all the important resources in one website!" />
-    <meta property="og:image" href="../assets/logo.png" />
+   <title>NSWRP | Landing page.</title>
+    <link rel="stylesheet" href="../2.0/styles.css">
+    <script src="../2.0/elements.js" type="module"></script>
+    <script src="../2.0/scripts.js" defer></script>
+    <link rel="icon" href="../media/logo.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Landing page." />
+    <meta property="og:description" content="ERLC Central" />
+    <meta property="og:image" content="https://aunsw.netlify.app/media/logo.png" />
 </head>
 
 <body>
-  <header>
-      <div class="navigation">
-          <a href="https://aunsw.netlify.app/"><img src="../assets/logo.png" class="logo"></a>
-          <div class="grid"><a href="https://youtube.com/@AURolePlay"><img src="../assets/youtube.png" class="icon-size"></a><br><a href="https://discord.gg/rWtnWX5Esy"><img src="../assets/discord.png" class="icon-size"></a></div>
-      <div class="text">      
-        <a href="https://aunsw.netlify.app/departments" class="hook">Departments</a>
-        <a href="https://aunsw.netlify.app/departments" class="active">Home</a>
-        <a href="https://aunsw.netlify.app/guidelines"  class="hook">Guidelines</a>
-      </div></div></header>
+<div id="overlay"></div>
+<div class="navbar">
 
-    <div class="alert"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span><strong>Warning!</strong> This website is in development! Please report any issues to Bob.</div>
+<button id="openNav" class="menuBtn button">☰</button>
 
-   <div id="hero"></div>
-<p><img src="../assets/logo.png"></p>
+<a href="https://aunsw.netlify.app/" class="logo"><img src="../media/logo.png"><span>New South Wales Roleplay</span></a>
 
-    
-  <footer>
-    © NSW Roleplay. 2026 | All rights reserved.
-  </footer>
-    <script src="script.js"> </script>
+<div class="nav-right"><img src="../media/search.png" id="searchBtn" class="button">
+</div></div>
+
+<div id="sidebar" class="sidebar"><div class="sidebarHeader">
+<div class="serverName"><img src="../media/logo.png">New South Wales Roleplay</div>
+
+<button id="closeNav" class="closeBtn button">✕</button>
+</div>
+
+<nav class="navList">
+  <details class="dropdown">
+    <summary class="navItem"><img src="../media/departments.png"><span>Departments</span></summary>
+    <div class="dropdownContent">
+      <div class="dept-item">
+        <img src="../media/department/police.png"><a href="#">Police</a>
+      </div>
+      <div class="dept-item">
+        <img src="../media/department/police.afp"><a href="#">AFP</a>
+      </div>
+      <div class="dept-item">
+        <img src="../media/department/fire.png"><a href="#">Fire & Rescue</a>
+      </div>
+      <div class="dept-item">
+        <img src="../media/department/ambulance.png"><a href="#">Paramedics</a>
+      </div>
+    </div>
+  </details>
+
+  <a href="https://aunsw.netlify.app/team" class="navItem active"><img src="../media/team.png"><span>Meet the Team</span></a>
+  <a href="https://aunsw.netlify.app/affiliates" class="navItem"><img src="../media/affiliates.png"><span>Affiliates</span></a>
+  <a href="https://aunsw.netlify.app/2.0/ruled" class="navItem"><img src="../media/rulebook.png"><span>Rules & Guidelines</span></a>
+</nav>
+
+<div class="sidebarFooter">
+  <div class="copyright">© NSWRP | All rights reserved.</div>
+  <div class="social">
+    <a class="button socialBtn" href="https://www.youtube.com/@NSWERLC"><img src="../media/youtube.png"></a>
+    <a class="button socialBtn" href="https://discord.gg/rWtnWX5Esy"><img src="../media/discord.png"></a>
+  </div>
+</div>
+</div>
+
+<div id="searchOverlay">
+
+<div class="searchBox">
+
+<input id="searchInput" type="text" placeholder="Search...">
+
+<div id="searchResults"></div>
+</div>
+</div>
+
 </body>
+</html>
