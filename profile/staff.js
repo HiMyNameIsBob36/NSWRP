@@ -19,7 +19,7 @@ function getLocalTime(timezone) {
             timeZone: timezone
         }).format(new Date());
     } catch (e) {
-        return "Time unknown";
+        return "Failed fetching time.";
     }
 }
 
