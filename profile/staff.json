@@ -29,6 +29,26 @@
       "avatar": "media/profiles/magic.png",
       "sector": "Directive Board",
       "role": "Director"
+    },
+    {
+      "name": "Jay",
+      "handle": "@jay",
+      "pronouns": "he/him",
+      "timezone": "Australia/Queensland",
+      "description": "N/A",
+      "avatar": "media/profiles/jay.png",
+      "sector": "Management Board",
+      "role": "Supervisor"
+    },
+    {
+      "name": "FireflyFrey",
+      "handle": "@RICKASTLY0011",
+      "pronouns": "she/her",
+      "timezone": "Australia/Sydney",
+      "description": "N/A",
+      "avatar": "media/profiles/frey.png",
+      "sector": "Management Board",
+      "role": "Manager"
     }
   ]
 }
