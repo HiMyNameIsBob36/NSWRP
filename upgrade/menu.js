@@ -1,35 +1,36 @@
-/* SEARCH POPUP */
+const sidebar = document.getElementById("sidebar")
+const overlay = document.getElementById("overlay")
+
+document.getElementById("openNav").onclick = () =>{
+sidebar.classList.add("open")
+overlay.classList.add("show")
+}
+
+document.getElementById("closeNav").onclick = closeMenu
+overlay.onclick = closeMenu
+
+function closeMenu(){
+sidebar.classList.remove("open")
+overlay.classList.remove("show")
+}
+
+/* SEARCH */
 
 const searchOverlay = document.getElementById("searchOverlay")
 const searchInput = document.getElementById("searchInput")
-const closeSearch = document.getElementById("closeSearch")
-
-function openSearch(){
-
-searchOverlay.classList.add("show")
-
-setTimeout(()=>{
-searchInput.focus()
-},150)
-
-}
-
-function closeSearchBox(){
-searchOverlay.classList.remove("show")
-}
+const results = document.getElementById("searchResults")
 
 document.querySelector(".searchBtn").onclick = openSearch
-closeSearch.onclick = closeSearchBox
+document.getElementById("closeSearch").onclick = closeSearch
 
-/* CLOSE CLICK OUTSIDE */
-
-searchOverlay.addEventListener("click",(e)=>{
-if(e.target === searchOverlay){
-closeSearchBox()
+function openSearch(){
+searchOverlay.classList.add("show")
+searchInput.focus()
 }
-})
 
-/* KEYBOARD SHORTCUT */
+function closeSearch(){
+searchOverlay.classList.remove("show")
+}
 
 document.addEventListener("keydown",(e)=>{
 
@@ -39,19 +40,16 @@ openSearch()
 }
 
 if(e.key === "Escape"){
-closeSearchBox()
+closeSearch()
 }
 
 })
 
 /* SEARCH ENGINE */
 
-async function loadSearch(){
-
-const res = await fetch("/search-data.json")
-const pages = await res.json()
-
-const results = document.getElementById("searchResults")
+fetch("search-data.json")
+.then(res=>res.json())
+.then(pages=>{
 
 searchInput.addEventListener("input",()=>{
 
@@ -66,7 +64,7 @@ if(page.title.toLowerCase().includes(q) || page.content.toLowerCase().includes(q
 results.innerHTML += `
 <a href="${page.url}" class="result">
 <b>${page.title}</b>
-<p>${page.content.slice(0,120)}...</p>
+<p>${page.content}</p>
 </a>
 `
 
@@ -76,35 +74,33 @@ results.innerHTML += `
 
 })
 
-}
-
-loadSearch()
+})
 
 /* THEME TOGGLE */
 
-const themeToggle = document.getElementById("themeToggle")
-const themeIcon = document.getElementById("themeIcon")
+const toggle = document.getElementById("themeToggle")
+const icon = document.getElementById("themeIcon")
 
 let theme = localStorage.getItem("theme")
 
-if(theme === "light"){
+if(theme==="light"){
 document.body.classList.add("light")
-themeIcon.src="../media/light.png"
+icon.src="media/light.png"
 }
 
-themeToggle.onclick = ()=>{
+toggle.onclick = ()=>{
 
 document.body.classList.toggle("light")
 
 if(document.body.classList.contains("light")){
 
 localStorage.setItem("theme","light")
-themeIcon.src="../media/light.png"
+icon.src="media/light.png"
 
 }else{
 
 localStorage.setItem("theme","dark")
-themeIcon.src="../media/dark.png"
+icon.src="media/dark.png"
 
 }
 
