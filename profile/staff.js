@@ -70,7 +70,7 @@ async function loadStaff() {
                         </div>
                     </div>
                     <div class="staff-tags">
-                        <span class="tag" style="background:${roleTheme.color}; border:1px solid ${roleTheme.border}">
+                        <span class="tag" style="background-color: ${roleTheme.color}; border:1px solid ${roleTheme.border}">
                             ${member.role}
                         </span>
                     </div>
