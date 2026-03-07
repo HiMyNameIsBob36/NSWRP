@@ -43,9 +43,12 @@ height:28px;
 margin-left:auto;
 }
 
-.nav-right img{
-width:22px;
-cursor:pointer;
+.nav-right img#searchBtn {
+    padding: 6px; /* Space for the border */
+    width: 24px;
+    height: 24px;
+    display: block;
+    cursor:pointer;
 }
 
 /* SIDEBAR */
@@ -218,9 +221,51 @@ border-top:1px solid rgba(255,255,255,.06);
 font-size:13px;
 }
 
-.social img{
-width:22px;
-margin-left:8px;
+.social {
+    display: flex;
+    gap: 8px; /* Space between YouTube and Discord */
+}
+
+.socialBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    width: 32px;
+    height: 32px;
+}
+
+.social img {
+    width: 100%;
+    margin-left: 0;
+}
+
+/* Fix Department Indentation */
+.dropdownContent {
+    padding-left: 40px; /* Indent from main menu */
+}
+
+.dept-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 0;
+}
+
+.dept-item img {
+    width: 18px; /* Smaller icons for sub-menu */
+    height: auto;
+}
+
+.dept-item a {
+    opacity: 0.8;
+    font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+.dept-item:hover a {
+    opacity: 1;
 }
 
 /* SEARCH */
