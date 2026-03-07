@@ -46,7 +46,7 @@ async function loadStaff() {
                     <div>
                         <h2>${member.name}</h2>
                         <p>${member.handle} • ${member.pronouns}</p>
-                        <p>🕒 ${currentTime}</p>
+                        <p>><img src="../media/clock.png"> ${currentTime}</p>
                     </div>
                 </div>
                 <div class="staff-tags">
