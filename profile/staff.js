@@ -1,5 +1,5 @@
 const THEMES = {
-    "Direcor": { color: "rgba(0, 81, 255, 0.3)", border: "#0051ff" },
+    "Director": { color: "rgba(0, 81, 255, 0.3)", border: "#0051ff" },
     "Management": { color: "rgba(255, 77, 77, 0.3)", border: "#ff4d4d" },
     "Default": { color: "rgba(255, 255, 255, 0.1)", border: "#46494A" }
 };
