@@ -1,40 +1,111 @@
-const sidebar = document.getElementById("sidebar")
-const openBtn = document.getElementById("openNav")
-const closeBtn = document.getElementById("closeNav")
-const overlay = document.getElementById("overlay")
+/* SEARCH POPUP */
 
-openBtn.onclick = () => {
-sidebar.classList.add("open")
-overlay.classList.add("show")
+const searchOverlay = document.getElementById("searchOverlay")
+const searchInput = document.getElementById("searchInput")
+const closeSearch = document.getElementById("closeSearch")
+
+function openSearch(){
+
+searchOverlay.classList.add("show")
+
+setTimeout(()=>{
+searchInput.focus()
+},150)
+
 }
 
-function closeMenu(){
-sidebar.classList.remove("open")
-overlay.classList.remove("show")
+function closeSearchBox(){
+searchOverlay.classList.remove("show")
 }
 
-closeBtn.onclick = closeMenu
-overlay.onclick = closeMenu
+document.querySelector(".searchBtn").onclick = openSearch
+closeSearch.onclick = closeSearchBox
 
-/* SEARCH FILTER */
+/* CLOSE CLICK OUTSIDE */
 
-const search = document.getElementById("navSearch")
+searchOverlay.addEventListener("click",(e)=>{
+if(e.target === searchOverlay){
+closeSearchBox()
+}
+})
 
-search.addEventListener("input",function(){
+/* KEYBOARD SHORTCUT */
 
-let value = this.value.toLowerCase()
-let items = document.querySelectorAll(".openable")
+document.addEventListener("keydown",(e)=>{
 
-items.forEach(item=>{
+if(e.key === "/"){
+e.preventDefault()
+openSearch()
+}
 
-let text = item.innerText.toLowerCase()
+if(e.key === "Escape"){
+closeSearchBox()
+}
 
-if(text.includes(value)){
-item.style.display=""
+})
+
+/* SEARCH ENGINE */
+
+async function loadSearch(){
+
+const res = await fetch("/search-data.json")
+const pages = await res.json()
+
+const results = document.getElementById("searchResults")
+
+searchInput.addEventListener("input",()=>{
+
+let q = searchInput.value.toLowerCase()
+
+results.innerHTML=""
+
+pages.forEach(page=>{
+
+if(page.title.toLowerCase().includes(q) || page.content.toLowerCase().includes(q)){
+
+results.innerHTML += `
+<a href="${page.url}" class="result">
+<b>${page.title}</b>
+<p>${page.content.slice(0,120)}...</p>
+</a>
+`
+
+}
+
+})
+
+})
+
+}
+
+loadSearch()
+
+/* THEME TOGGLE */
+
+const themeToggle = document.getElementById("themeToggle")
+const themeIcon = document.getElementById("themeIcon")
+
+let theme = localStorage.getItem("theme")
+
+if(theme === "light"){
+document.body.classList.add("light")
+themeIcon.src="../media/light.png"
+}
+
+themeToggle.onclick = ()=>{
+
+document.body.classList.toggle("light")
+
+if(document.body.classList.contains("light")){
+
+localStorage.setItem("theme","light")
+themeIcon.src="../media/light.png"
+
 }else{
-item.style.display="none"
+
+localStorage.setItem("theme","dark")
+themeIcon.src="../media/dark.png"
+
 }
 
-})
-
-})
+}
