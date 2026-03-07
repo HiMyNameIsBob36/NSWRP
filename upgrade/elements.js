@@ -5,89 +5,104 @@ class MyHeader extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
 <div class="navbar">
-  <button id="openNav" class="openBtn">☰</button>
 
-<!-- OVERLAY -->
-<div id="overlay"></div>
+<button id="openNav" class="menuBtn">☰</button>
+
+<a href="/" class="logo">
+<img src="media/logo.png">
+<span>New South Wales Roleplay</span>
+</a>
+
+<div class="nav-right">
+<img src="media/search.png" class="searchBtn">
+</div>
+
+</div>
+
+<!-- SIDEBAR -->
 
 <div id="sidebar" class="sidebar">
 
-    <!-- TOP -->
-    <div class="sidebarHeader">
-        <div class="serverName">
-            <img src="gear-small.png">
-            New South Wales Roleplay
-        </div>
+<div class="sidebarHeader">
 
-        <button id="closeNav" class="closeBtn">✕</button>
-    </div>
-
-    <!-- SEARCH -->
-    <div class="searchBox">
-        <input type="text" id="navSearch" placeholder="Search...">
-    </div>
-
-    <!-- NAV -->
-    <nav class="navList">
-
-        <!-- DROPDOWN -->
-        <details class="navDropdown openable">
-            <summary class="navItem">
-                <img src="gear.png" class="icon">
-                <span>Departments</span>
-            </summary>
-
-            <div class="dropdownContent">
-                <a href="#" class="navSub">Police</a>
-                <a href="#" class="navSub">Fire</a>
-                <a href="#" class="navSub">Civilian</a>
-            </div>
-        </details>
-
-        <a href="#" class="navItem active openable">
-            <img src="gear.png" class="icon">
-            <span>Meet the Team</span>
-        </a>
-
-        <a href="#" class="navItem openable">
-            <img src="gear.png" class="icon">
-            <span>Other Options</span>
-        </a>
-
-        <a href="#" class="navItem openable">
-            <img src="gear.png" class="icon">
-            <span>Other Options</span>
-        </a>
-
-    </nav>
-
-    <!-- FOOTER -->
-    <div class="sidebarFooter">
-
-        <div class="footerLeft">
-            <a href="https://youtube.com" target="_blank">
-                <img src="youtube.png">
-            </a>
-
-            <a href="https://discord.com" target="_blank">
-                <img src="discord.png">
-            </a>
-        </div>
-
-        <div class="copyright">
-            © NSWRP
-   </div>
-
-    </div>
+<div class="serverName">
+<img src="media/logo.png">
+New South Wales Roleplay
 </div>
 
-<a href="https://aunsw.netlify.app/"><img class="icon"><span>New South Wales Roleplay</span></a>
+<button id="closeNav">✕</button>
 
+</div>
 
+<nav class="navList">
 
-<div class="nav-right">
-   <a href="https://aunsw.netlify.app/search"><div class="icon"><img class="image" src="../media/search.png"></div></a>
- </div>
+<details>
+
+<summary class="navItem">
+<img src="media/icon.png">
+Departments
+</summary>
+
+<div class="dropdown">
+
+<a href="#">Police</a>
+<a href="#">Fire</a>
+<a href="#">Civilian</a>
+
+</div>
+
+</details>
+
+<a href="#" class="navItem">
+<img src="media/icon.png">
+Meet the Team
+</a>
+
+<a href="#" class="navItem">
+<img src="media/icon.png">
+Guides
+</a>
+
+</nav>
+
+<div class="sidebarFooter">
+
+<div id="themeToggle" class="themeToggle">
+
+<img id="themeIcon" src="media/dark.png">
+<span>Theme</span>
+
+</div>
+
+<div class="social">
+
+<a href="#"><img src="media/youtube.png"></a>
+<a href="#"><img src="media/discord.png"></a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SEARCH POPUP -->
+
+<div id="searchOverlay">
+
+<div class="searchModal">
+
+<div class="searchTop">
+
+<img src="media/search.png">
+<input type="text" id="searchInput" placeholder="Search...">
+<button id="closeSearch">✕</button>
+
+</div>
+
+<div id="searchResults"></div>
+
+</div>
+
 </div>`
   }
 }
