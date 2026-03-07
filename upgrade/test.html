@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>NSWRP</title>
+
+<style>
+
+/* ---------------- GLOBAL ---------------- */
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#0e0f14;
+color:white;
+transition:background .35s,color .35s;
+}
+
+body.light{
+background:#f4f6fa;
+color:#111;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+.navbar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:12px 18px;
+background:#11131a;
+}
+
+.menuBtn{
+background:none;
+border:none;
+font-size:22px;
+color:white;
+cursor:pointer;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:white;
+font-size:18px;
+font-weight:600;
+}
+
+.logo img{
+height:30px;
+}
+
+.nav-right img{
+width:24px;
+cursor:pointer;
+transition:.25s;
+}
+
+.nav-right img:hover{
+transform:scale(1.1);
+}
+
+/* ---------------- SIDEBAR ---------------- */
+
+.sidebar{
+position:fixed;
+top:0;
+left:-420px;
+width:400px;
+height:100%;
+background:#11131a;
+display:flex;
+flex-direction:column;
+transition:left .35s ease;
+z-index:1000;
+}
+
+.sidebar.open{
+left:0;
+}
+
+/* overlay */
+
+#overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.45);
+opacity:0;
+pointer-events:none;
+transition:.3s;
+}
+
+#overlay.show{
+opacity:1;
+pointer-events:auto;
+}
+
+/* sidebar header */
+
+.sidebarHeader{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:16px;
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.serverName{
+display:flex;
+align-items:center;
+gap:8px;
+font-weight:600;
+}
+
+.serverName img{
+width:22px;
+}
+
+.closeBtn{
+background:#1b1d26;
+border:none;
+color:white;
+width:32px;
+height:32px;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* ---------------- NAV ITEMS ---------------- */
+
+.navList{
+display:flex;
+flex-direction:column;
+gap:10px;
+padding:12px;
+}
+
+.navItem{
+display:flex;
+align-items:center;
+gap:10px;
+padding:10px;
+border-radius:8px;
+cursor:pointer;
+transition:.25s;
+}
+
+.navItem:hover{
+background:rgba(255,255,255,.06);
+}
+
+.navItem img{
+width:22px;
+}
+
+/* dropdown */
+
+details summary{
+list-style:none;
+cursor:pointer;
+}
+
+.dropdown{
+display:flex;
+flex-direction:column;
+padding-left:32px;
+gap:6px;
+margin-top:6px;
+}
+
+.dropdown a{
+text-decoration:none;
+color:white;
+font-size:14px;
+opacity:.85;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+.sidebarFooter{
+margin-top:auto;
+padding:14px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-top:1px solid rgba(255,255,255,.06);
+}
+
+.themeToggle{
+display:flex;
+align-items:center;
+gap:8px;
+cursor:pointer;
+padding:6px 8px;
+border-radius:8px;
+transition:.25s;
+}
+
+.themeToggle:hover{
+background:rgba(255,255,255,.06);
+}
+
+.themeToggle img{
+width:22px;
+}
+
+.social img{
+width:24px;
+margin-left:8px;
+cursor:pointer;
+}
+
+/* ---------------- SEARCH ---------------- */
+
+#searchOverlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+display:flex;
+justify-content:center;
+align-items:flex-start;
+opacity:0;
+pointer-events:none;
+transition:.3s;
+}
+
+#searchOverlay.show{
+opacity:1;
+pointer-events:auto;
+}
+
+.searchModal{
+margin-top:120px;
+width:600px;
+max-width:90%;
+background:#14161d;
+border-radius:12px;
+overflow:hidden;
+transform:translateY(-40px);
+transition:.35s;
+}
+
+#searchOverlay.show .searchModal{
+transform:translateY(0);
+}
+
+.searchTop{
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.searchTop img{
+width:20px;
+}
+
+#searchInput{
+flex:1;
+background:none;
+border:none;
+color:white;
+font-size:16px;
+outline:none;
+}
+
+#closeSearch{
+background:none;
+border:none;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+#searchResults{
+max-height:400px;
+overflow:auto;
+padding:10px;
+}
+
+.result{
+display:block;
+padding:10px;
+text-decoration:none;
+color:white;
+border-radius:8px;
+transition:.2s;
+}
+
+.result:hover{
+background:rgba(255,255,255,.06);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- OVERLAY -->
+<div id="overlay"></div>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<button id="openNav" class="menuBtn">☰</button>
+
+<a href="#" class="logo">
+<img src="logo.png">
+<span>New South Wales Roleplay</span>
+</a>
+
+<div class="nav-right">
+<img src="search.png" class="searchBtn">
+</div>
+
+</div>
+
+<!-- SIDEBAR -->
+
+<div id="sidebar" class="sidebar">
+
+<div class="sidebarHeader">
+
+<div class="serverName">
+<img src="logo.png">
+New South Wales Roleplay
+</div>
+
+<button id="closeNav" class="closeBtn">✕</button>
+
+</div>
+
+<nav class="navList">
+
+<details>
+
+<summary class="navItem">
+<img src="gear.png">
+Departments
+</summary>
+
+<div class="dropdown">
+
+<a href="#">Police</a>
+<a href="#">Fire</a>
+<a href="#">Civilian</a>
+
+</div>
+
+</details>
+
+<div class="navItem">
+<img src="gear.png">
+Meet the Team
+</div>
+
+<div class="navItem">
+<img src="gear.png">
+Guides
+</div>
+
+</nav>
+
+<div class="sidebarFooter">
+
+<div id="themeToggle" class="themeToggle">
+
+<img id="themeIcon" src="dark.png">
+<span>Theme</span>
+
+</div>
+
+<div class="social">
+
+<a href="#"><img src="youtube.png"></a>
+<a href="#"><img src="discord.png"></a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SEARCH POPUP -->
+
+<div id="searchOverlay">
+
+<div class="searchModal">
+
+<div class="searchTop">
+
+<img src="search.png">
+
+<input type="text" id="searchInput" placeholder="Search the site...">
+
+<button id="closeSearch">✕</button>
+
+</div>
+
+<div id="searchResults"></div>
+
+</div>
+
+</div>
+
+<script>
+
+/* SIDEBAR */
+
+const sidebar = document.getElementById("sidebar")
+const overlay = document.getElementById("overlay")
+
+document.getElementById("openNav").onclick = ()=>{
+sidebar.classList.add("open")
+overlay.classList.add("show")
+}
+
+document.getElementById("closeNav").onclick = closeMenu
+overlay.onclick = closeMenu
+
+function closeMenu(){
+sidebar.classList.remove("open")
+overlay.classList.remove("show")
+}
+
+/* SEARCH */
+
+const searchOverlay = document.getElementById("searchOverlay")
+const searchInput = document.getElementById("searchInput")
+const results = document.getElementById("searchResults")
+
+document.querySelector(".searchBtn").onclick = openSearch
+document.getElementById("closeSearch").onclick = closeSearch
+
+function openSearch(){
+searchOverlay.classList.add("show")
+searchInput.focus()
+}
+
+function closeSearch(){
+searchOverlay.classList.remove("show")
+}
+
+/* keyboard shortcuts */
+
+document.addEventListener("keydown",(e)=>{
+
+if(e.key === "/"){
+e.preventDefault()
+openSearch()
+}
+
+if(e.key === "Escape"){
+closeSearch()
+}
+
+})
+
+/* example search data */
+
+const pages = [
+
+{
+title:"Departments",
+url:"#",
+content:"Police Fire Civilian"
+},
+
+{
+title:"Meet the Team",
+url:"#",
+content:"Administration Moderators Staff"
+},
+
+{
+title:"Guides",
+url:"#",
+content:"Server guides tutorials how to play"
+}
+
+]
+
+searchInput.addEventListener("input",()=>{
+
+let q = searchInput.value.toLowerCase()
+
+results.innerHTML=""
+
+pages.forEach(page=>{
+
+if(page.title.toLowerCase().includes(q) || page.content.toLowerCase().includes(q)){
+
+results.innerHTML += `
+<a href="${page.url}" class="result">
+<b>${page.title}</b>
+<p>${page.content}</p>
+</a>
+`
+
+}
+
+})
+
+})
+
+/* THEME */
+
+const toggle = document.getElementById("themeToggle")
+const icon = document.getElementById("themeIcon")
+
+let theme = localStorage.getItem("theme")
+
+if(theme === "light"){
+document.body.classList.add("light")
+icon.src="light.png"
+}
+
+toggle.onclick = ()=>{
+
+document.body.classList.toggle("light")
+
+if(document.body.classList.contains("light")){
+localStorage.setItem("theme","light")
+icon.src="light.png"
+}
+else{
+localStorage.setItem("theme","dark")
+icon.src="dark.png"
+}
+
+}
+
+</script>
+
+</body>
+</html>
