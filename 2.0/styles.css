@@ -1,8 +1,15 @@
-body{
+body {
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 background:#18171B;
 color:white;
+}
+
+.button {
+color:white;
+background: #27262A;
+border: 1px #46494A solid;
+border-radius: 10px;
 }
 
 /* NAVBAR */
@@ -21,9 +28,6 @@ border:none;
 font-size:22px;
 color:white;
 cursor:pointer;
-background: #27262A;
-border: 1px #46494A solid;
-border-radius: 10px;
 }
 
 .logo{
