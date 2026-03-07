@@ -5,53 +5,80 @@ class MyHeader extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
 <div class="navbar">
-  <!-- OPEN BUTTON -->
-<button id="openNav" class="openBtn">☰</button>
+  <button id="openNav" class="openBtn">☰</button>
 
-<!-- SIDEBAR -->
+<!-- OVERLAY -->
+<div id="overlay"></div>
+
 <div id="sidebar" class="sidebar">
 
-    <div class="sidebarTop">
-        <button id="closeNav" class="closeBtn">✕</button>
+    <!-- TOP -->
+    <div class="sidebarHeader">
         <div class="serverName">
             <img src="gear-small.png">
             New South Wales Roleplay
         </div>
+
+        <button id="closeNav" class="closeBtn">✕</button>
     </div>
 
+    <!-- SEARCH -->
+    <div class="searchBox">
+        <input type="text" id="navSearch" placeholder="Search...">
+    </div>
+
+    <!-- NAV -->
     <nav class="navList">
 
-        <a href="#" class="navItem active">
-            <img src="gear.png" class="icon">
-            <span>Departments</span>
-        </a>
+        <!-- DROPDOWN -->
+        <details class="navDropdown openable">
+            <summary class="navItem">
+                <img src="gear.png" class="icon">
+                <span>Departments</span>
+            </summary>
 
-        <a href="#" class="navItem">
+            <div class="dropdownContent">
+                <a href="#" class="navSub">Police</a>
+                <a href="#" class="navSub">Fire</a>
+                <a href="#" class="navSub">Civilian</a>
+            </div>
+        </details>
+
+        <a href="#" class="navItem active openable">
             <img src="gear.png" class="icon">
             <span>Meet the Team</span>
         </a>
 
-        <a href="#" class="navItem">
+        <a href="#" class="navItem openable">
             <img src="gear.png" class="icon">
             <span>Other Options</span>
         </a>
 
-        <a href="#" class="navItem">
+        <a href="#" class="navItem openable">
             <img src="gear.png" class="icon">
             <span>Other Options</span>
         </a>
 
     </nav>
 
-    <div class="sidebarBottom">
-        <div class="socials">
-            <img src="youtube.png">
-            <img src="discord.png">
+    <!-- FOOTER -->
+    <div class="sidebarFooter">
+
+        <div class="footerLeft">
+            <a href="https://youtube.com" target="_blank">
+                <img src="youtube.png">
+            </a>
+
+            <a href="https://discord.com" target="_blank">
+                <img src="discord.png">
+            </a>
         </div>
 
-        <div class="copyright">© NSWRP | All rights reserved</div>
-    </div>
+        <div class="copyright">
+            © NSWRP
+   </div>
 
+    </div>
 </div>
 
 <a href="https://aunsw.netlify.app/"><img class="icon"><span>New South Wales Roleplay</span></a>
