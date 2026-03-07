@@ -36,7 +36,8 @@
     background: #1e1f24;
     padding: 20px;
     border-radius: 10px;
-    width: 350px;
+    border: 1px #46494A solid;
+    width: 340px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: default;
     color: white;
