@@ -6,17 +6,17 @@
       "pronouns": "he/him",
       "timezone": "Australia/Sydney",
       "description": "👋 Hey! I'm Bob. I supervise all staff in game and make sure they're up to our standards!",
-      "avatar": "images/bob.png",
+      "avatar": "media/profiles/bob.png",
       "sector": "Management Team",
       "role": "Supervisor"
     },
     {
-      "name": "Sarah",
-      "handle": "@sarah_dev",
-      "pronouns": "she/her",
-      "timezone": "Europe/London",
-      "description": "Building the future of our systems! Catch me in the code or on the support forums.",
-      "avatar": "images/sarah.png",
+      "name": "Ben",
+      "handle": "@maloola203",
+      "pronouns": "he/him",
+      "timezone": "Australaia/Sydney",
+      "description": "N/A",
+      "avatar": "media/profiles/sarah.png",
       "sector": "Development",
       "role": "Lead Developer"
     }
