@@ -109,6 +109,50 @@
 
 
 
+/* 1. The "Window" that only shows ONE number at a time */
+.clock-window {
+    display: inline-flex;
+    height: 20px;          /* Critical: Must match the height of one <span> */
+    overflow: hidden;      /* Critical: This hides the numbers 1-9 */
+    background: rgba(0, 0, 0, 0.2); /* Optional: darkens the clock background */
+    padding: 0 5px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+/* 2. The vertical strip of numbers 0-9 */
+.digit-slot {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 12px;           /* Width of a single digit */
+}
+
+/* 3. Each individual number */
+.digit-slot span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;          /* MUST match .clock-window height exactly */
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+}
+
+.separator {
+    line-height: 20px;
+    height: 20px;
+    padding: 0 2px;
+}
+
+/* 4. Fix the alignment in the card header */
+.time-container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #00ff88;
+}
 
 /* 2. The Sliding Clock Container */
 .clock-container {
@@ -119,20 +163,6 @@
     color: #00ff88;
     height: 20px; /* Height of one line of text */
     overflow: hidden; /* Hides the numbers moving behind the scenes */
-}
-
-.digit-slot {
-    height: 20px;
-    line-height: 20px;
-    transition: transform 0.6s cubic-bezier(0.45, 0.05, 0.55, 0.95);
-    display: flex;
-    flex-direction: column;
-}
-
-/* Individual number styling */
-.digit-slot span {
-    display: block;
-    height: 20px;
 }
 
 /* Glassmorphism for Roles */
@@ -162,10 +192,4 @@
 }
 @media (max-width: 750px) {
     #staff-container { grid-template-columns: 1fr; }
-}
-
-@keyframes tick {
-    0% { opacity: 0.5; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
-    100% { opacity: 0.5; transform: scale(1); }
 }
