@@ -55,6 +55,11 @@
     object-fit: cover;
 }
 
+.timer {
+   width: 10px;
+   height: 10px;
+}
+
 /* 4. Tags & Hover Effects */
 .staff-tags {
     margin-top: 15px;
