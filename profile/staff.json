@@ -1,0 +1,24 @@
+{
+  "staff": [
+    {
+      "name": "Bob",
+      "handle": "@heyitsbob36",
+      "pronouns": "he/him",
+      "timezone": "America/New_York",
+      "description": "👋 Hey! I'm Bob. I supervise all staff in game and make sure they're up to our standards!",
+      "avatar": "images/bob.png",
+
+      "sector": {
+        "name": "Management Team",
+        "color": "#ff4d4d",
+        "border": "#ff1a1a"
+      },
+
+      "role": {
+        "name": "Supervisor",
+        "color": "#990000",
+        "border": "#660000"
+      }
+    }
+  ]
+}
