@@ -73,15 +73,24 @@ content:"Tutorials server guides"
 
 ]
 
-searchInput.addEventListener("input",()=>{
 
-let q = searchInput.value.toLowerCase()
+function renderResults(query=""){
+
+let q = query.toLowerCase()
 
 results.innerHTML=""
 
+let found = false
+
 pages.forEach(page=>{
 
-if(page.title.toLowerCase().includes(q) || page.content.toLowerCase().includes(q)){
+if(
+q === "" ||
+page.title.toLowerCase().includes(q) ||
+page.content.toLowerCase().includes(q)
+){
+
+found = true
 
 results.innerHTML += `
 <a href="${page.url}" class="result">
@@ -94,4 +103,23 @@ results.innerHTML += `
 
 })
 
+if(!found){
+results.innerHTML = `<div class="result">No results found</div>`
+}
+
+}
+
+/* show results when search opens */
+
+function openSearch(){
+
+searchOverlay.classList.add("show")
+searchInput.focus()
+
+renderResults()
+
+}
+
+searchInput.addEventListener("input",()=>{
+renderResults(searchInput.value)
 })
