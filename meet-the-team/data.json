@@ -9,6 +9,10 @@
       "avatar": "media/profiles/bob.png",
       "sector": "Directive Board",
       "role": "Founder"
+      "badges": [
+        { "icon": "../media/badges/3mo.png", "label": "Verified Staff", "color": "#00ff88" },
+        { "icon": "../media/badges/6mo.png", "label": "System Contributor", "color": "#4d94ff" }
+      ]
     },
     {
       "name": "Ben",
