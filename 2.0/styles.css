@@ -14,13 +14,27 @@ border-radius: 10px;
 
 /* NAVBAR */
 
-.navbar{
+.navbars {
 display:flex;
 position: fixed;
 align-items:center;
 gap:14px;
 padding:12px 18px;
 background:#11131a;
+}
+
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Prevents overflow when width is 100% */
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
+    background: #11131a;
+    z-index: 900;
 }
 
 .menuBtn{
