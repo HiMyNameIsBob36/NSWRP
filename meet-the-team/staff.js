@@ -23,6 +23,12 @@ function updateTimes() {
 setInterval(updateTimes, 10000);
 
 async function loadStaff() {
+
+    async function loadStaff() {
+    console.log("Script is attempting to load staff..."); // ADD THIS
+    const container = document.getElementById("staff-container");
+    console.log("Container found:", container); // ADD THIS
+    
     const container = document.getElementById("staff-container");
     if (!container) return;
 
@@ -83,6 +89,8 @@ async function loadStaff() {
     } catch (e) {
         console.log("Failed loading");
     }
+}
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {
