@@ -1,19 +1,15 @@
 const THEMES = {
-    "Manager": { color: "rgba(255, 77, 77, 0.15)", border: "#ff4d4d" },
-    "Supervisor":      { color: "rgba(153, 0, 0, 0.15)", border: "#990000" },
-    "Founder":     { color: "rgba(77, 148, 255, 0.15)", border: "#4d94ff" },
-    "Director":          { color: "rgba(0, 81, 255, 0.15)", border: "#0051ff" },
-    "Default":         { color: "rgba(255, 255, 255, 0.1)", border: "#46494A" }
+    "Management Team": { color: "rgba(255, 77, 77, 0.15)", border: "#ff4d4d" },
+    "Police Force": { color: "rgba(0, 81, 255, 0.15)", border: "#0051ff" },
+    "Default": { color: "rgba(255, 255, 255, 0.1)", border: "#46494A" }
 };
 
 function getTheme(name) {
     return THEMES[name] || THEMES["Default"];
 }
 
-// Simple Live Time Function
 function updateTimes() {
-    const clocks = document.querySelectorAll('.live-clock');
-    clocks.forEach(clock => {
+    document.querySelectorAll('.live-clock').forEach(clock => {
         const tz = clock.getAttribute('data-timezone');
         clock.innerText = new Intl.DateTimeFormat('en-AU', {
             hour: '2-digit',
@@ -24,7 +20,6 @@ function updateTimes() {
     });
 }
 
-// Update the clocks every 10 seconds
 setInterval(updateTimes, 10000);
 
 async function loadStaff() {
@@ -32,49 +27,51 @@ async function loadStaff() {
     if (!container) return;
 
     try {
-        const response = await fetch("data.json");
+        const response = await fetch("staff.json");
         const data = await response.json();
 
-        // Grouping logic (by Sector/Department)
-        const groups = data.staff.reduce((acc, member) => {
-            const dept = member.sector || "General Staff";
+        const groups = data.staff.reduce((acc, m) => {
+            const dept = m.sector || "Unassigned";
             if (!acc[dept]) acc[dept] = [];
-            acc[dept].push(member);
+            acc[dept].push(m);
             return acc;
         }, {});
 
         container.innerHTML = "";
 
         for (const [deptName, members] of Object.entries(groups)) {
-            // Create the Department Heading
             const section = document.createElement("div");
             section.className = "dept-section";
             section.innerHTML = `<h2 class="dept-title">${deptName}</h2>`;
 
-            // Create the Grid (This keeps cards 3-per-line)
             const wrapper = document.createElement("div");
             wrapper.className = "card-wrapper";
 
-            members.forEach(member => {
-                const roleTheme = getTheme(member.role);
+            members.forEach(m => {
+                const theme = getTheme(m.role);
+                const badgesHTML = (m.badges || []).map(b => `
+                    <div class="badge-item" style="border-color: ${b.color}">
+                        <img src="${b.icon}" alt="badge">
+                        <span class="tooltip">${b.label}</span>
+                    </div>
+                `).join('');
+
                 const card = document.createElement("div");
                 card.className = "staff-card";
-
                 card.innerHTML = `
                     <div class="staff-header">
-                        <img src="${member.avatar}" class="avatar" onerror="this.src='../media/logo.png'">
-                        <div class="header-info">
-                            <h2>${member.name}</h2>
-                            <p class="handle-pronouns">${member.handle} • ${member.pronouns}</p>
-                            <p class="time-row"><img src="../media/clock.png" class="time"> <span class="live-clock" data-timezone="${member.timezone}">--:--</span></p>
+                        <img src="${m.avatar}" class="avatar" onerror="this.src='../media/logo.png'">
+                        <div>
+                            <h2>${m.name}</h2>
+                            <p>${m.handle} • ${m.pronouns}</p>
+                            <p>🕒 <span class="live-clock" data-timezone="${m.timezone}">--:--</span></p>
                         </div>
                     </div>
                     <div class="staff-tags">
-                        <span class="tag" style="background:${roleTheme.color}; border:1px solid ${roleTheme.border}">
-                            ${member.role}
-                        </span>
+                        <span class="tag" style="background:${theme.color}; border:1px solid ${theme.border}">${m.role}</span>
+                        <div class="badge-container">${badgesHTML}</div>
                     </div>
-                    <p class="description">${member.description}</p>
+                    <p class="description">${m.description}</p>
                 `;
                 wrapper.appendChild(card);
             });
@@ -82,12 +79,21 @@ async function loadStaff() {
             section.appendChild(wrapper);
             container.appendChild(section);
         }
-
-        updateTimes(); // Run immediately after loading
-
-    } catch (error) {
-        console.error("Error loading staff:", error);
+        updateTimes();
+    } catch (e) {
+        console.error("Error loading staff:", e);
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadStaff);
+document.addEventListener("DOMContentLoaded", () => {
+    loadStaff();
+    
+    const openBtn = document.getElementById("openNav");
+    const closeBtn = document.getElementById("closeNav");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("overlay");
+
+    if(openBtn) openBtn.onclick = () => { sidebar.classList.add("open"); overlay.classList.add("show"); };
+    if(closeBtn) closeBtn.onclick = () => { sidebar.classList.remove("open"); overlay.classList.remove("show"); };
+    if(overlay) overlay.onclick = () => { sidebar.classList.remove("open"); overlay.classList.remove("show"); };
+});
