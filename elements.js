@@ -1,7 +1,5 @@
-console.log("working just fine!")
-
 //OOP - Inheritence
-class MyHeader extends HTMLElement {
+class SiteHeader extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
      <h1>The Resume of ME :D</h1>
@@ -16,25 +14,7 @@ class MyHeader extends HTMLElement {
   }
 }
 
-class MyFooter extends HTMLElement {
-  connectedCallback() {
-      this.innerHTML = `<p>When I get the chance :P</p>`
-  }
-}
+customElements.define('the-header', SiteHeader)
 
-class MyOpener extends HTMLElement {
-  connectedCallback() {
-      this.innerHTML = `   <div id = 'opener'> 
-        <form action="">
-          <label for=""> Name <input type="text" id="visitorName"> </label>
-          <label for=""> Company <input type="text" id="companyName"> </label>
-          <input type="submit" id="submitVisitor" value="Submit">
-          <input type="button" id="submitAnon" value="Decline">
-        </form>  
-      </div>`
-  }
-}
+console.log("Custom elements loaded.")
 
-customElements.define('my-header', MyHeader)
-customElements.define('my-footer', MyFooter)
-customElements.define('my-opener', MyOpener)
