@@ -49,6 +49,16 @@
       "avatar": "media/profiles/frey.png",
       "sector": "Management Board",
       "role": "Manager"
+    },
+    {
+      "name": "Oscar",
+      "handle": "@T11M4A3",
+      "pronouns": "he/him",
+      "timezone": "Australia/Sydney",
+      "description": "I'm a motivated, adaptable professional who thrives on continuous learning and teamwork. I take ownership of my work, welcome feedback, and turn challenges into opportunities to add value to my team.",
+      "avatar": "media/profiles/oscar.png",
+      "sector": "Adminastration Team",
+      "role": "Adminastrator"
     }
   ]
 }
