@@ -34,8 +34,7 @@ async function loadStaff() {
     }
 
     try {
-        // Change "staff.json" to "../staff.json" if your file is in a different folder
-        const response = await fetch("staff.json");
+        const response = await fetch("data.json");
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
