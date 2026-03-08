@@ -22,8 +22,8 @@ class SiteHeader extends HTMLElement {
   <details class="dropdown">
     <summary class="navItem"><img src="../media/departments.png"><span>Departments</span></summary>
     <div class="dropdownContent">
-      <div class="dept-item"><img src="../media/department/police.png"><a href="#">Police</a></div>
-      <div class="dept-item"><img src="../media/department/afp.png"><a href="#">Austrlaian Federal Police</a></div>
+      <div class="dept-item"><img src="../media/department/police.png"><a href="https://aunsw.netlify.app/departments#police">Police</a></div>
+      <div class="dept-item"><img src="../media/department/afp.png"><a href="https://aunsw.netlify.app/departments#afp">Austrlaian Federal Police</a></div>
       <div class="dept-item"><img src="../media/department/fire.png"><a href="#">Fire & Rescue</a></div>
       <div class="dept-item"><img src="../media/department/ambulance.png"><a href="#">Paramedics</a></div>
        <div class="dept-item"><img src="../media/department/dot.png"><a href="#">Transport NSW</a></div>
