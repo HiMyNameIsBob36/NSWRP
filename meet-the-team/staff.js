@@ -11,30 +11,38 @@ function getTheme(name) {
 function updateTimes() {
     document.querySelectorAll('.live-clock').forEach(clock => {
         const tz = clock.getAttribute('data-timezone');
-        clock.innerText = new Intl.DateTimeFormat('en-AU', {
-            hour: '2-digit',
-            minute: '2-digit',
-            hour12: true,
-            timeZone: tz
-        }).format(new Date());
+        try {
+            clock.innerText = new Intl.DateTimeFormat('en-AU', {
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: true,
+                timeZone: tz
+            }).format(new Date());
+        } catch (e) {
+            clock.innerText = "Time Error";
+        }
     });
 }
 
-setInterval(updateTimes, 10000);
-
 async function loadStaff() {
-
-    async function loadStaff() {
-    console.log("Script is attempting to load staff..."); // ADD THIS
+    console.log("Attempting to load staff.json...");
     const container = document.getElementById("staff-container");
-    console.log("Container found:", container); // ADD THIS
     
-    const container = document.getElementById("staff-container");
-    if (!container) return;
+    if (!container) {
+        console.error("CRITICAL: Element #staff-container not found in HTML!");
+        return;
+    }
 
     try {
-        const response = await fetch("data.json");
+        // Change "staff.json" to "../staff.json" if your file is in a different folder
+        const response = await fetch("staff.json");
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
         const data = await response.json();
+        console.log("JSON Data Loaded:", data);
 
         const groups = data.staff.reduce((acc, m) => {
             const dept = m.sector || "Unassigned";
@@ -48,14 +56,18 @@ async function loadStaff() {
         for (const [deptName, members] of Object.entries(groups)) {
             const section = document.createElement("div");
             section.className = "dept-section";
-            section.innerHTML = `<h2 class="dept-title">${deptName}</h2>`;
-
+            
             const wrapper = document.createElement("div");
             wrapper.className = "card-wrapper";
 
+            section.innerHTML = `<h2 class="dept-title">${deptName}</h2>`;
+
             members.forEach(m => {
                 const theme = getTheme(m.role);
-                const badgesHTML = (m.badges || []).map(b => `
+                
+                // Safety check: if badges don't exist, use empty array
+                const badges = m.badges || [];
+                const badgesHTML = badges.map(b => `
                     <div class="badge-item" style="border-color: ${b.color}">
                         <img src="${b.icon}" alt="badge">
                         <span class="tooltip">${b.label}</span>
@@ -70,7 +82,7 @@ async function loadStaff() {
                         <div>
                             <h2>${m.name}</h2>
                             <p>${m.handle} • ${m.pronouns}</p>
-                            <p>🕒 <span class="live-clock" data-timezone="${m.timezone}">--:--</span></p>
+                            <p>🕒 <span class="live-clock" data-timezone="${m.timezone}">Loading...</span></p>
                         </div>
                     </div>
                     <div class="staff-tags">
@@ -85,15 +97,19 @@ async function loadStaff() {
             section.appendChild(wrapper);
             container.appendChild(section);
         }
+
         updateTimes();
-    } catch (e) {
-        console.log("Failed loading");
+        setInterval(updateTimes, 30000);
+
+    } catch (error) {
+        console.error("Fetch Error:", error);
+        container.innerHTML = `<p style="color:red; padding:20px;">Failed to load staff: ${error.message}</p>`;
     }
 }
 
-}
-
+/* Sidebar logic bundled in to ensure it works
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("Staff Script Initialized");
     loadStaff();
     
     const openBtn = document.getElementById("openNav");
@@ -101,7 +117,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const sidebar = document.getElementById("sidebar");
     const overlay = document.getElementById("overlay");
 
-    if(openBtn) openBtn.onclick = () => { sidebar.classList.add("open"); overlay.classList.add("show"); };
-    if(closeBtn) closeBtn.onclick = () => { sidebar.classList.remove("open"); overlay.classList.remove("show"); };
-    if(overlay) overlay.onclick = () => { sidebar.classList.remove("open"); overlay.classList.remove("show"); };
-});
+    if (openBtn && sidebar && overlay) {
+        openBtn.onclick = () => {
+            sidebar.classList.add("open");
+            overlay.classList.add("show");
+        };
+    }
+
+    if (closeBtn && sidebar && overlay) {
+        closeBtn.onclick = () => {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("show");
+        };
+    }
+
+    if (overlay) {
+        overlay.onclick = () => {
+            sidebar.classList.remove("open");
+            overlay.classList.remove("show");
+        };
+    }
+}); */
