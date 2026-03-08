@@ -110,6 +110,59 @@
     transform: scale(1.1);
 }
 
+.badge-container {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.badge-item {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: help;
+}
+
+.badge-item img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    z-index: 10;
+}
+
+.badge-item:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.badge-item:hover {
+    background: rgba(255,255,255,0.1);
+}
+
 .description {
     margin-top: 30px;
     font-size: 0.95rem;
