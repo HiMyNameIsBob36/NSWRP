@@ -233,13 +233,13 @@ font-size:13px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6px;
-    width: 32px;
-    height: 32px;
+    padding: 3px;
+    width: 30px;
+    height: 30px;
 }
 
 .social img {
-    width: 100%;
+    width: 90%;
     margin-left: 0;
 }
 
