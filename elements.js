@@ -2,14 +2,50 @@
 class SiteHeader extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
-     <h1>The Resume of ME :D</h1>
-      <div id="navigationButtons">
-        <button onclick="window.location.href = 'index.html'">Home</button>
-        <button onclick="window.location.href = 'HTMLGames.html'">HTML Games</button>
-        <button onclick="window.location.href = 'game1.html'">The Bridge</button>
-        <button onclick="window.location.href = 'game2.html'">The Pizza Ria</button>
-        <button onclick="window.location.href = 'game3.html'">Game #3</button>
-      </div>
+    <div id="overlay"></div>
+<div class="navbar">
+
+<button id="openNav" class="menuBtn button">☰</button>
+
+<a href="https://aunsw.netlify.app/" class="logo"><img src="../media/logo.png"><span>New South Wales Roleplay</span></a>
+
+<div class="nav-right"><img src="../media/search.png" id="searchBtn" class="button"></div>
+</div>
+
+<div id="sidebar" class="sidebar"><div class="sidebarHeader">
+<div class="serverName"><img src="../media/logo.png">New South Wales Roleplay</div>
+
+<button id="closeNav" class="closeBtn button">✕</button>
+</div>
+
+<nav class="navList">
+  <details class="dropdown">
+    <summary class="navItem"><img src="../media/departments.png"><span>Departments</span></summary>
+    <div class="dropdownContent">
+      <div class="dept-item"><img src="../media/department/police.png"><a href="#">Police</a></div>
+      <div class="dept-item"><img src="../media/department/afp.png"><a href="#">Austrlaian Federal Police</a></div>
+      <div class="dept-item"><img src="../media/department/fire.png"><a href="#">Fire & Rescue</a></div>
+      <div class="dept-item"><img src="../media/department/ambulance.png"><a href="#">Paramedics</a></div>
+       <div class="dept-item"><img src="../media/department/dot.png"><a href="#">Transport NSW</a></div>
+      </div></details>
+
+  <a href="https://aunsw.netlify.app/team" class="navItem active"><img src="../media/team.png"><span>Meet the Team</span></a>
+  <a href="https://aunsw.netlify.app/affiliates" class="navItem"><img src="../media/affiliates.png"><span>Affiliates</span></a>
+  <a href="https://aunsw.netlify.app/rules" class="navItem"><img src="../media/rulebook.png"><span>Rules & Guidelines</span></a>
+</nav>
+
+<div class="sidebarFooter">
+  <div class="copyright">© NSWRP | All rights reserved.</div>
+  <div class="social">
+    <a class="button socialBtn" href="https://www.youtube.com/@NSWERLC"><img src="../media/youtube.png"></a>
+    <a class="button socialBtn" href="https://discord.gg/rWtnWX5Esy"><img src="../media/discord.png"></a>
+  </div></div></div>
+
+<div id="searchOverlay">
+<div class="searchBox">
+<input id="searchInput" type="text" placeholder="Search...">
+<div id="searchResults"></div>
+</div></div>
     `
   }
 }
