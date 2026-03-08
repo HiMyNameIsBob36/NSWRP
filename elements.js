@@ -37,8 +37,8 @@ class SiteHeader extends HTMLElement {
 <div class="sidebarFooter">
   <div class="copyright">© NSWRP | All rights reserved.</div>
   <div class="social">
-    <a class="button socialBtn" href="https://www.youtube.com/@NSWERLC"><img src="../media/youtube.png"></a>
-    <a class="button socialBtn" href="https://discord.gg/rWtnWX5Esy"><img src="../media/discord.png"></a>
+    <a class="button socialBtn" href="https://www.youtube.com/@NSWERLC" target="_blank"><img src="../media/youtube.png"></a>
+    <a class="button socialBtn" href="https://discord.gg/rWtnWX5Esy" target="_blank"><img src="../media/discord.png"></a>
   </div></div></div>
 
 <div id="searchOverlay">
