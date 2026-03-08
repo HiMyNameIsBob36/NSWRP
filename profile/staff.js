@@ -32,7 +32,7 @@ async function loadStaff() {
     if (!container) return;
 
     try {
-        const response = await fetch("staff.json");
+        const response = await fetch("data.json");
         const data = await response.json();
 
         // Grouping logic (by Sector/Department)
