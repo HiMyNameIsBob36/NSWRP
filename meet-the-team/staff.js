@@ -81,7 +81,7 @@ async function loadStaff() {
         }
         updateTimes();
     } catch (e) {
-        console.error("Error loading staff:", e);
+        console.log("Failed loading");
     }
 }
 
