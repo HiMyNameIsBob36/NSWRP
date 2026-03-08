@@ -16,7 +16,7 @@ border-radius: 10px;
 
 .navbar{
 display:flex;
-psoition: fixed;
+position: fixed;
 align-items:center;
 gap:14px;
 padding:12px 18px;
