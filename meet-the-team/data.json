@@ -10,7 +10,7 @@
       "sector": "Directive Board",
       "role": "Founder",
       "badges": [
-        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#fffff" },
+        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#ffffff" },
         { "icon": "../meet-the-team/badges/6mo.png", "label": "6 Months of Service", "color": "#A6A6A6" },
         { "icon": "../meet-the-team/badges/1yr.png", "label": "1 Year of Service", "color": "#1E1F1F" },
         { "icon": "../meet-the-team/badges/contributer.png", "label": "Contributer", "color": "#a200ff" },
@@ -27,7 +27,7 @@
       "sector": "Directive Board",
       "role": "Director",
       "badges": [
-        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#fffff" }
+        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#ffffff" }
       ]
     },
     {
@@ -40,7 +40,7 @@
       "sector": "Directive Board",
       "role": "Director",
       "badges": [
-        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#fffff" }
+        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#ffffff" }
       ]
     },
     {
@@ -53,7 +53,7 @@
       "sector": "Management Board",
       "role": "Supervisor",
       "badges": [
-        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#fffff" },
+        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#ffffff" },
         { "icon": "../meet-the-team/badges/sotm.png", "label": "Staff of the Month", "color": "#f584ff" }
       ]
     },
