@@ -11,6 +11,7 @@
 .rules-left {
   flex: 3;  
   min-width: 300px; 
+  text-align: left;
 }
 
 .rules-right {
