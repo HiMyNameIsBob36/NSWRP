@@ -19,8 +19,10 @@
 
 .rules-right {
     width: 77%;
+    margin-top: 50px;
 }
 
 .rules-left {
     margin-left: auto;
+    margin-top: 50px;
 }
