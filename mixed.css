@@ -18,6 +18,6 @@
   min-width: 200px;
 }
 
-.rules-container h2 {
-  font-weight: 700;
+.rules-container ul {
+  text-align: left;
 }
