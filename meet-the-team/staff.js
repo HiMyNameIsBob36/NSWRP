@@ -1,8 +1,10 @@
-const THEMES = {
+const THEMES = { 
     "Founder": { color: "rgba(255, 77, 77, 0.15)", border: "#ff4d4d" },
     "Director": { color: "rgba(255, 165, 0, 0.15)", border: "#ffa500" },
+    "Requiting Manager": { color: "rgba(153, 0, 0, 0.15)", border: "#990000" },
     "Supervisor": { color: "rgba(153, 0, 0, 0.15)", border: "#990000" },
     "Manager": { color: "rgba(77, 148, 255, 0.15)", border: "#4d94ff" },
+    "Creative Team": { color: "rgba(78, 198, 198, 0.15)", border: "#4ec6c6" },
     "Adminastrator": { color: "rgba(0, 255, 136, 0.15)", border: "#00ff88" },
     "Default": { color: "rgba(255, 255, 255, 0.1)", border: "#46494A" }
 };
