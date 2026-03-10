@@ -15,7 +15,7 @@ function loadStats() {
         const el = document.getElementById(id);
         if (el) el.textContent = data.stats[id];
     });
-}
+}*/
 
 function revealOnScroll() {
     const reveals = document.querySelectorAll(".reveal");
@@ -26,13 +26,13 @@ function revealOnScroll() {
             el.classList.add("active");
         }
     });
-}*/
+}
 
 /* --- SEARCH LOGIC --- */
 const pages = [
     { title: "Departments", url: "#", content: "Police Fire Civilian" },
     { title: "Meet the Team", url: "#", content: "Staff administration moderators" },
-    { title: "Guides", url: "#", content: "Tutorials server guides" }
+    { title: "Rules", url: "#", content: "Tutorials server guides" }
 ];
 
 function renderResults(query = "") {
