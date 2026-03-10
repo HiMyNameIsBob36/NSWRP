@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   gap: 20px;
   padding-top: 50px;
+  padding: 8px;
 }
 
 .rules-left {
