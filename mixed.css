@@ -4,7 +4,6 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  text-align: center;
   padding-top: 50px;
 }
 
@@ -17,8 +16,9 @@
 .rules-right {
   flex: 1;    
   min-width: 200px;
+  text-align: left;
 }
 
-.rules-container ul {
-  text-align: left;
+.rules-container h2 {
+  text-align: center;
 }
