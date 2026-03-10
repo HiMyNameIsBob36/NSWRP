@@ -1,6 +1,6 @@
 const THEMES = { 
-    "Founder": { color: "rgba(255, 77, 77, 0.15)", border: "#ff4d4d" },
-    "Director": { color: "rgba(255, 165, 0, 0.15)", border: "#ffa500" },
+    "Founder": { color: "rgba(230, 126, 34, 0.15)", border: "#e67e22" },
+    "Director": { color: "rgba(235, 148, 71, 0.15)", border: "#eb9447" },
     "Requiting Manager": { color: "rgba(153, 0, 0, 0.15)", border: "#990000" },
     "Supervisor": { color: "rgba(153, 0, 0, 0.15)", border: "#990000" },
     "Manager": { color: "rgba(77, 148, 255, 0.15)", border: "#4d94ff" },
