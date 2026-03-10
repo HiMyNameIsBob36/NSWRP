@@ -1,11 +1,7 @@
-.navbars {
-display:flex;
-position: fixed;
-align-items:center;
-gap:14px;
-padding:12px 18px;
-background:#11131a;
-}
+///////////////
+// RULEBOOK //
+//////////////
+
 
 .navbar {
     display: flex;
@@ -21,23 +17,10 @@ background:#11131a;
     z-index: 900;
 }
 
-.menuBtn{
-font-size:22px;
+.rules-right {
+    width: 77%;
 }
 
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-text-decoration:none;
-color:white;
-font-weight:600;
-}
-
-.logo img{
-height:28px;
-}
-
-.grid-left {
-margin-left: auto;
+.rules-left {
+    margin-left: auto;
 }
