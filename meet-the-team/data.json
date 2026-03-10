@@ -25,7 +25,10 @@
       "description": "I am the proud director of NSWRP. I like photography and mountain biking as well as creating interactive websites and apps",
       "avatar": "https://cdn.discordapp.com/avatars/1409871665269309512/64123ab30215e11318273176bc0d4b89.webp?size=160",
       "sector": "Directive Board",
-      "role": "Director"
+      "role": "Director",
+      "badges": [
+        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#fffff" }
+      ]
     },
     {
       "name": "Magic",
@@ -35,7 +38,10 @@
       "description": "G'day I'm Magicknight200, a Director here at NSW Roleplay. I enjoy playing video games, mountain biking, playing basketball, footy, tennis, cross country, cricket, soccer and sprinting.",
       "avatar": "https://cdn.discordapp.com/avatars/860315832148295700/0dc2f054e20db63a1af6b755d4bb3eff.webp?size=160",
       "sector": "Directive Board",
-      "role": "Director"
+      "role": "Director",
+      "badges": [
+        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#fffff" }
+      ]
     },
     {
       "name": "Jay",
@@ -45,7 +51,11 @@
       "description": "N/A",
       "avatar": "https://cdn.discordapp.com/avatars/1457692229735809141/54d64b879b368dee770a42c90f36c81d.webp?size=160",
       "sector": "Management Board",
-      "role": "Supervisor"
+      "role": "Supervisor",
+      "badges": [
+        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#fffff" },
+        { "icon": "../meet-the-team/badges/sotm.png", "label": "Staff of the Month", "color": "#f584ff" },
+      ]
     },
     {
       "name": "FireflyFrey",
