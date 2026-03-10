@@ -1,11 +1,13 @@
 const THEMES = { 
-    "Founder": { color: "rgba(230, 126, 34, 0.15)", border: "#e67e22" },
-    "Director": { color: "rgba(235, 148, 71, 0.15)", border: "#eb9447" },
-    "Recruiting Manager": { color: "rgba(199, 0, 0, 0.15)", border: "#c70000" },
-    "Supervisor": { color: "rgba(255, 34, 34, 0.15)", border: "#ff2222" },
-    "Manager": { color: "rgba(77, 148, 255, 0.15)", border: "#4d94ff" },
-    "Creative Team": { color: "rgba(78, 198, 198, 0.15)", border: "#4ec6c6" },
-    "Adminastrator": { color: "rgba(0, 255, 136, 0.15)", border: "#00ff88" },
+    "Founder": { color: "rgba(230, 126, 34, 0.25)", border: "#e67e22" },
+    "Director": { color: "rgba(235, 148, 71, 0.25)", border: "#eb9447" },
+    "Recruiting Manager": { color: "rgba(199, 0, 0, 0.25)", border: "#c70000" },
+    "Supervisor": { color: "rgba(255, 34, 34, 0.25)", border: "#ff2222" },
+    "Manager": { color: "rgba(255, 67, 67, 0.25)", border: "#ff4343" },
+    "Department Overser": { color: "rgba(21, 122, 122, 0.25)", border: "#157a7a" },
+    "Event Staff": { color: "rgba(31, 164, 164, 0.25)", border: "#1fa4a4" },
+    "Creative Team": { color: "rgba(78, 198, 198, 0.25)", border: "#4ec6c6" },
+    "Adminastrator": { color: "rgba(0, 255, 136, 0.25)", border: "#00ff88" },
     "Default": { color: "rgba(255, 255, 255, 0.1)", border: "#46494A" }
 };
 
