@@ -10,8 +10,11 @@
       "sector": "Directive Board",
       "role": "Founder",
       "badges": [
-        { "icon": "../meet-the-team/badges/3mo.png", "label": "Verified Staff", "color": "#00ff88" },
-        { "icon": "../meet-the-team/badges/6mo.png", "label": "System Contributor", "color": "#4d94ff" }
+        { "icon": "../meet-the-team/badges/3mo.png", "label": "3 Months of Service", "color": "#00ff88" },
+        { "icon": "../meet-the-team/badges/6mo.png", "label": "6 Months of Service", "color": "#4d94ff" },
+        { "icon": "../meet-the-team/badges/1yr.png", "label": "1 Year of Server", "color": "#00ff88" },
+        { "icon": "../meet-the-team/badges/contributer.png", "label": "Contributer", "color": "#00ff88" },
+        { "icon": "../meet-the-team/badges/dev.png", "label": "Website & Discord Bot Developer", "color": "#00ff88" }
       ]
     },
     {
