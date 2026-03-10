@@ -1,8 +1,8 @@
 const THEMES = { 
     "Founder": { color: "rgba(230, 126, 34, 0.15)", border: "#e67e22" },
     "Director": { color: "rgba(235, 148, 71, 0.15)", border: "#eb9447" },
-    "Requiting Manager": { color: "rgba(153, 0, 0, 0.15)", border: "#990000" },
-    "Supervisor": { color: "rgba(153, 0, 0, 0.15)", border: "#990000" },
+    "Recruiting Manager": { color: "rgba(199, 0, 0, 0.15)", border: "#c70000" },
+    "Supervisor": { color: "rgba(255, 34, 34, 0.15)", border: "#ff2222" },
     "Manager": { color: "rgba(77, 148, 255, 0.15)", border: "#4d94ff" },
     "Creative Team": { color: "rgba(78, 198, 198, 0.15)", border: "#4ec6c6" },
     "Adminastrator": { color: "rgba(0, 255, 136, 0.15)", border: "#00ff88" },
