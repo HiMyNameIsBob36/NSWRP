@@ -1,22 +1,3 @@
-/* --- DATA & STATS 
-const data = {
-    "stats": {
-        "uploads": "0",
-        "creators": "0",
-        "favorites": "0",
-        "members": "1"
-    }
-};
-
-// Function to fill stats (Fixed to check if elements exist)
-function loadStats() {
-    const fields = ["uploads", "creators", "favorites", "members"];
-    fields.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.textContent = data.stats[id];
-    });
-}*/
-
 function revealOnScroll() {
     const reveals = document.querySelectorAll(".reveal");
     const windowHeight = window.innerHeight;
@@ -160,6 +141,5 @@ window.addEventListener("scroll", revealOnScroll);
 
 // Run everything on load
 window.addEventListener("DOMContentLoaded", () => {
-    loadStats();
     revealOnScroll();
 });
