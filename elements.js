@@ -29,7 +29,7 @@ class SiteHeader extends HTMLElement {
        <div class="dept-item"><img src="../media/department/dot.png"><a href="https://aunsw.netlify.app/departments#dot">Transport NSW</a></div>
       </div></details>
 
-  <a href="https://aunsw.netlify.app/meet-the-team" class="navItem"><img src="../media/meet-the-team.png"><span>Meet the Team</span></a>
+  <a href="https://aunsw.netlify.app/meet-the-team" class="navItem"><img src="../media/team.png"><span>Meet the Team</span></a>
   <a href="https://aunsw.netlify.app/affiliates" class="navItem"><img src="../media/affiliates.png"><span>Affiliates</span></a>
   <a href="https://aunsw.netlify.app/rules" class="navItem"><img src="../media/rulebook.png"><span>Rules & Guidelines</span></a>
 </nav>
