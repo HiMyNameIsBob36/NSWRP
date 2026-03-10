@@ -77,7 +77,7 @@ async function loadStaff() {
                         <div>
                             <h2>${m.name}</h2>
                             <p>${m.handle} • ${m.pronouns}</p>
-                            <p><img src="../media/clock.png" class="time"><span class="live-clock" data-timezone="${m.timezone}">...</span></p>
+                            <p><img src="../media/clock.png" class="time"> <span class="live-clock" data-timezone="${m.timezone}">...</span></p>
                         </div>
                     </div>
                     <div class="staff-tags">
