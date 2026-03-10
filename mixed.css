@@ -17,12 +17,12 @@
     z-index: 900;
 }
 
-.rules-right {
+.rules-left {
     width: 77%;
     margin-top: 50px;
 }
 
-.rules-left {
+.rules-right {
     margin-left: auto;
     margin-top: 50px;
 }
