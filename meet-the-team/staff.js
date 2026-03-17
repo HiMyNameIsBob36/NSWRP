@@ -1,13 +1,17 @@
 const THEMES = { 
     "Founder": { color: "rgba(230, 126, 34, 0.25)", border: "#e67e22" },
     "Director": { color: "rgba(235, 148, 71, 0.25)", border: "#eb9447" },
+    
     "Recruiting Manager": { color: "rgba(40, 100, 65, 0.25)", border: "#286441" },
     "Department Overseer": { color: "rgba(70, 136, 97, 0.25)", border: "#468861" },
     "Supervisor": { color: "rgba(95, 175, 128, 0.25)", border: "#5faf80" },
     "Ground Manager": { color: "rgba(139, 235, 178, 0.25)", border: "#8bebb2" },
+
+    "Adminastrator": { color: "rgba(0, 255, 136, 0.25)", border: "#00ff88" },
+    
     "Event Staff": { color: "rgba(31, 164, 164, 0.25)", border: "#1fa4a4" },
     "Creative Team": { color: "rgba(78, 198, 198, 0.25)", border: "#4ec6c6" },
-    "Adminastrator": { color: "rgba(0, 255, 136, 0.25)", border: "#00ff88" },
+   
     "Default": { color: "rgba(255, 255, 255, 0.1)", border: "#46494A" }
 };
 
