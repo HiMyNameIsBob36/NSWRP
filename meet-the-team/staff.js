@@ -7,10 +7,12 @@ const THEMES = {
     "Supervisor": { color: "rgba(95, 175, 128, 0.25)", border: "#5faf80" },
     "Ground Manager": { color: "rgba(139, 235, 178, 0.25)", border: "#8bebb2" },
 
-    "Adminastrator": { color: "rgba(0, 255, 136, 0.25)", border: "#00ff88" },
+    "Adminastrator": { color: "rgba(214, 0, 0, 0.25)", border: "#d60000" },
+    "Moderator": { color: "rgba(255, 204, 0, 0.25)", border: "#ffcc00" },
     
     "Event Staff": { color: "rgba(31, 164, 164, 0.25)", border: "#1fa4a4" },
     "Creative Team": { color: "rgba(78, 198, 198, 0.25)", border: "#4ec6c6" },
+    "General Helper": { color: "rgba(183, 255, 255, 0.25)", border: "#b7ffff" },
    
     "Default": { color: "rgba(255, 255, 255, 0.1)", border: "#46494A" }
 };
