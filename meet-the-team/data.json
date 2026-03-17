@@ -68,16 +68,6 @@
       "role": "Manager"
     },
     {
-      "name": "SHAW",
-      "handle": "@coolXDtoby",
-      "pronouns": "he/him",
-      "timezone": "Australia/Sydney",
-      "description": "I’m kind most the times and I do tasks at the dead line but get them done in time and I’m cool I’m a fun go to person when you want to hang out with somebody and I’m a keep cool guy 🙂",
-      "avatar": "https://cdn.discordapp.com/avatars/1210894983272472598/7bc4d37dc339f0110530945d62dd62dd.webp?size=160",
-      "sector": "Community Operations",
-      "role": "Creative Team"
-    },
-    {
       "name": "T11",
       "handle": "@T11M4A3",
       "pronouns": "he/him",
@@ -86,6 +76,16 @@
       "avatar": "https://cdn.discordapp.com/avatars/1333751739618164812/5c6d4a645e529ffd69d879aa7f9ca842.webp?size=160",
       "sector": "Administration Team",
       "role": "Adminastrator"
+    },
+    {
+      "name": "SHAW",
+      "handle": "@coolXDtoby",
+      "pronouns": "he/him",
+      "timezone": "Australia/Sydney",
+      "description": "I’m kind most the times and I do tasks at the dead line but get them done in time and I’m cool I’m a fun go to person when you want to hang out with somebody and I’m a keep cool guy 🙂",
+      "avatar": "https://cdn.discordapp.com/avatars/1210894983272472598/7bc4d37dc339f0110530945d62dd62dd.webp?size=160",
+      "sector": "Community Operations",
+      "role": "Creative Team"
     }
   ]
 }
