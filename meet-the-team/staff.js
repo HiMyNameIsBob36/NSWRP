@@ -3,7 +3,7 @@ const THEMES = {
     "Director": { color: "rgba(235, 148, 71, 0.25)", border: "#eb9447" },
     "Recruiting Manager": { color: "rgba(40, 100, 65, 0.25)", border: "#286441" },
     "Department Overseer": { color: "rgba(70, 136, 97, 0.25)", border: "#468861" },
-    "Supervisor": { color: "rgba(255, 34, 34, 0.25)", border: "#ff2222" },
+    "Supervisor": { color: "rgba(95, 175, 128, 0.25)", border: "#5faf80" },
     "Manager": { color: "rgba(255, 67, 67, 0.25)", border: "#ff4343" },
     "Department Overser": { color: "rgba(21, 122, 122, 0.25)", border: "#157a7a" },
     "Event Staff": { color: "rgba(31, 164, 164, 0.25)", border: "#1fa4a4" },
